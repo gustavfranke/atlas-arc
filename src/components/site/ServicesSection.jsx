@@ -1,0 +1,80 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Film, Camera, Layers, Compass, Play } from "lucide-react";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-50px" },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+};
+
+const services = [
+  {
+    icon: Film,
+    title: "Cinematic Brand Films",
+    desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling.",
+  },
+  {
+    icon: Camera,
+    title: "Photography & Editorial Shoots",
+    desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print.",
+  },
+  {
+    icon: Layers,
+    title: "Social Media Content Packages",
+    desc: "High-volume, high-quality content delivered in a way that gives your brand consistency without sacrificing aesthetic.",
+  },
+  {
+    icon: Compass,
+    title: "Creative Direction & Story Development",
+    desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera.",
+  },
+  {
+    icon: Play,
+    title: "Reels & Short-Form Video",
+    desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads.",
+  },
+];
+
+export default function ServicesSection() {
+  return (
+    <section id="services" className="bg-[#0d0c0a] py-24 md:py-40">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.p
+          {...fadeUp}
+          className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
+        >
+          Services
+        </motion.p>
+        <motion.h2
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.1 }}
+          className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight"
+        >
+          What We Create
+        </motion.h2>
+
+        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1a1816]">
+          {services.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="bg-[#0d0c0a] p-8 md:p-10 group hover:bg-[#111010] transition-colors duration-700"
+              >
+                <Icon className="w-6 h-6 text-[#c9a96e] mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
+                <h3 className="text-[#f5f0e8] text-lg font-light mb-4 tracking-tight">{s.title}</h3>
+                <p className="text-[#7a7068] text-sm font-light leading-relaxed">{s.desc}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
