@@ -33,27 +33,15 @@ export default function FeaturedCampaign() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative aspect-video bg-[#111] overflow-hidden group cursor-pointer"
-          onClick={() => setPlaying(true)}
+          className="relative aspect-video bg-[#111] overflow-hidden"
         >
-          {!playing ? (
-            <>
-              <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/7533955e7_simonwatsonimages-8960.jpg"
-                alt="Featured campaign"
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-105 transition-all duration-1000"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full border border-[#f5f0e8]/30 flex items-center justify-center group-hover:border-[#c9a96e] group-hover:scale-110 transition-all duration-500">
-                  <Play className="w-8 h-8 text-[#f5f0e8] ml-1" fill="currentColor" />
-                </div>
-              </div>
-            </>
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-[#111] text-[#6b6156] text-sm font-light">
-              <p>Video player — add your campaign film URL</p>
-            </div>
-          )}
+          <iframe
+            src="https://www.youtube.com/embed/lJvdwTAyCr8?rel=0&modestbranding=1"
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+          />
         </motion.div>
 
         <motion.p

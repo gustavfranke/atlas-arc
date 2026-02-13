@@ -9,15 +9,13 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center">
-      {/* Background Video / Gradient Overlay */}
+      {/* Background Image / Gradient Overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0a] z-10" />
-        <iframe
-          src="https://www.youtube.com/embed/lJvdwTAyCr8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=lJvdwTAyCr8&playsinline=1&rel=0&modestbranding=1"
-          className="absolute inset-0 w-full h-full pointer-events-none opacity-40"
-          style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
-          allow="autoplay; loop"
-          frameBorder="0"
+        <img
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/4361985d0_simonwatsonimages-2295.jpg"
+          alt="Cinematic wildlife landscape"
+          className="w-full h-full object-cover opacity-40"
         />
       </div>
 
