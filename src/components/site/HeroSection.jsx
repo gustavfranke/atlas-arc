@@ -12,21 +12,12 @@ export default function HeroSection() {
       {/* Background Video / Gradient Overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0a] z-10" />
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-40"
-          poster="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/c5211f542_GorongosaNationalPark025.jpg"
-        >
-          <source src="" type="video/mp4" />
-        </video>
-        {/* Fallback image if no video */}
-        <img
-          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/c5211f542_GorongosaNationalPark025.jpg"
-          alt="Cinematic landscape"
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        <iframe
+          src="https://www.youtube.com/embed/lJvdwTAyCr8?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&playlist=lJvdwTAyCr8&playsinline=1&rel=0&modestbranding=1"
+          className="absolute inset-0 w-full h-full pointer-events-none opacity-40"
+          style={{ width: '100vw', height: '100vh', objectFit: 'cover' }}
+          allow="autoplay; loop"
+          frameBorder="0"
         />
       </div>
 
