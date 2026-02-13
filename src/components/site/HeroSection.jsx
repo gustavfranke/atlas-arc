@@ -18,13 +18,13 @@ export default function HeroSection() {
           loop
           playsInline
           className="w-full h-full object-cover opacity-40"
-          poster="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+          poster="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/c5211f542_GorongosaNationalPark025.jpg"
         >
           <source src="" type="video/mp4" />
         </video>
         {/* Fallback image if no video */}
         <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/c5211f542_GorongosaNationalPark025.jpg"
           alt="Cinematic landscape"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />

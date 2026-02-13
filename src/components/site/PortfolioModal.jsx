@@ -41,7 +41,7 @@ export default function PortfolioModal({ project, onClose }) {
         {/* Cover Image */}
         <div className="aspect-video w-full overflow-hidden">
           <img
-            src={project.cover_image || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"}
+            src={project.cover_image}
             alt={project.title}
             className="w-full h-full object-cover"
           />

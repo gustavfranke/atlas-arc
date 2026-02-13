@@ -39,7 +39,7 @@ export default function FeaturedCampaign() {
           {!playing ? (
             <>
               <img
-                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80"
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/7533955e7_simonwatsonimages-8960.jpg"
                 alt="Featured campaign"
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-70 group-hover:scale-105 transition-all duration-1000"
               />

@@ -8,40 +8,63 @@ const categories = ["All", "Hotels & Lodges", "Retreats & Wellness", "Lifestyle 
 
 const fallbackProjects = [
   {
-    id: "1", title: "Boutique Lodge Campaign", category: "Hotels & Lodges", location: "Western Cape, South Africa",
-    description: "A cinematic campaign designed to highlight the lodge's experience, atmosphere, and luxury detail. The focus was on golden hour storytelling, guest immersion, and emotional pacing.",
-    deliverables: ["Brand Film (90 sec)", "6 Social Reels", "40 Edited Photos", "Website Hero Video"],
-    cover_image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+    id: "1", title: "Gorongosa Safari Experience", category: "Hotels & Lodges", location: "Gorongosa National Park, Mozambique",
+    description: "A cinematic campaign capturing the raw beauty of safari life, golden hour game drives, and intimate guest experiences at luxury tented camps.",
+    deliverables: ["Brand Film (90 sec)", "8 Social Reels", "60 Edited Photos", "Aerial Footage"],
+    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/98cda59d7_GorongosaNationalPark037.jpg",
+    media_urls: [
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/79b1104d0_Chicari_038.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/71f23fc2d_GorongosaNationalPark001.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/c5211f542_GorongosaNationalPark025.jpg",
+    ]
   },
   {
-    id: "2", title: "Retreat Brand Story", category: "Retreats & Wellness", location: "Bali, Indonesia",
-    description: "An immersive visual narrative capturing the essence of a wellness retreat surrounded by rice fields and sacred rivers.",
-    deliverables: ["Brand Film (2 min)", "12 Social Reels", "80 Edited Photos"],
-    cover_image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80",
+    id: "2", title: "Wilderness Treehouse Campaign", category: "Hotels & Lodges", location: "South Africa",
+    description: "An epic night sky campaign featuring a unique treehouse lodge under the Milky Way. Focus on adventure, stargazing, and wild luxury.",
+    deliverables: ["Brand Film (2 min)", "10 Social Reels", "50 Astrophotography Shots"],
+    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/f299de815__L1B1383-1.jpg",
   },
   {
-    id: "3", title: "Luxury Hotel Launch", category: "Hotels & Lodges", location: "Santorini, Greece",
-    description: "A premium visual campaign for a newly launched boutique hotel overlooking the Aegean Sea.",
-    deliverables: ["Brand Film (60 sec)", "8 Social Reels", "60 Edited Photos", "Drone Footage"],
-    cover_image: "https://images.unsplash.com/photo-1602343168175-d6e3d tried?w=800&q=80",
+    id: "3", title: "Coastal Retreat Architecture", category: "Hotels & Lodges", location: "Seychelles & Greece",
+    description: "A premium visual series showcasing stunning resort architecture, infinity pools, and luxury coastal living across multiple properties.",
+    deliverables: ["Brand Film (60 sec)", "12 Social Reels", "80 Edited Photos", "Drone Footage"],
+    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1ae031230_canopy-hilton-seychelles-simonwatsonimages-2435.jpg",
+    media_urls: [
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1N8A6357.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/56c0e7778_Perivoli-flux-simonwatsonimages-3786.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-2295.jpg",
+    ]
   },
   {
-    id: "4", title: "Lifestyle Brand Editorial", category: "Lifestyle Brands", location: "Cape Town, South Africa",
-    description: "Editorial photography and short-form content for a premium lifestyle brand rooted in slow living.",
-    deliverables: ["Editorial Shoot (50 Photos)", "4 Social Reels", "Look Book"],
-    cover_image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+    id: "4", title: "Adventure Lifestyle Series", category: "Lifestyle Brands", location: "Coastal Locations",
+    description: "Dynamic lifestyle content featuring surfing, water sports, and beach culture. Authentic, energetic, and cinematic.",
+    deliverables: ["20 Lifestyle Reels", "60 Editorial Photos", "Social Content Package"],
+    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/480d00ac8_DEMI-WAWA-simonwatsonimages-3667.jpg",
+    media_urls: [
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/65b598601_DEMI-WAWA-simonwatsonimages-3881.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/066c6be2e_onedigital-simonwatsonimages-copy.jpg",
+    ]
   },
   {
-    id: "5", title: "Vertical Content Series", category: "Short Form Reels", location: "Various Locations",
-    description: "A curated series of cinematic vertical reels for social media campaigns across multiple hospitality brands.",
-    deliverables: ["15 Cinematic Reels", "Social Strategy Guide"],
-    cover_image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
+    id: "5", title: "Wildlife Portrait Series", category: "Photography", location: "Africa",
+    description: "Intimate wildlife portraits capturing leopards, elephants, lions, and gorillas in their natural habitat. Golden hour magic.",
+    deliverables: ["100 Edited Wildlife Photos", "Print Gallery", "Conservation Story Film"],
+    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/cebfb04b7__L1B4364.jpg",
+    media_urls: [
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/4cfaa7e09__ONG1522.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-1101.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-8611.jpg",
+    ]
   },
   {
-    id: "6", title: "Wilderness Lodge Photography", category: "Photography", location: "Kruger, South Africa",
-    description: "A golden-hour photography series capturing the wild beauty and intimate luxury of a safari lodge.",
-    deliverables: ["100 Edited Photos", "Print-Ready Gallery", "Website Content"],
-    cover_image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&q=80",
+    id: "6", title: "Family & Adventure Retreats", category: "Retreats & Wellness", location: "South Africa & Mozambique",
+    description: "Heartfelt storytelling of family travel experiences, nature immersion, and the joy of discovery in premium retreat settings.",
+    deliverables: ["Brand Film (3 min)", "15 Social Reels", "70 Photos"],
+    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-1457.jpg",
+    media_urls: [
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/Perivoli-flux-simonwatsonimages-8186.jpg",
+      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/12a69c392_1N8A6357.jpg",
+    ]
   },
 ];
 
