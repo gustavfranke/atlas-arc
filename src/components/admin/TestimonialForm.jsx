@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Save } from "lucide-react";
 
-export default function TestimonialForm({ initial, onSave, isPending }) {
+const TestimonialForm = memo(function TestimonialForm({ initial, onSave, isPending }) {
   const [quote, setQuote] = useState(initial.quote || "");
   const [author, setAuthor] = useState(initial.author || "");
   const [company, setCompany] = useState(initial.company || "");
