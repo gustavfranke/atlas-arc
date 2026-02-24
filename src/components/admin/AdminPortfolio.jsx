@@ -108,6 +108,8 @@ export default function AdminPortfolio() {
         <Button onClick={startNew} size="sm"><Plus className="w-4 h-4 mr-1" /> Add Project</Button>
       </div>
 
+      <AdminPortfolioCategories />
+
       {editing && (
         <Card className="border-blue-200 bg-blue-50/50">
           <CardHeader className="pb-4">
