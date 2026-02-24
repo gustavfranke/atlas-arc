@@ -1,16 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { base44 } from "@/api/base44Client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Trash2, Save, X, Quote } from "lucide-react";
+
+// Separate form component so it doesn't re-render when testimonials list updates
+function TestimonialForm({ initial, onSave, onCancel, isPending }) {
+  const [quote, setQuote] = useState(initial.quote || "");
+  const [author, setAuthor] = useState(initial.author || "");
+  const [company, setCompany] = useState(initial.company || "");
+
+  const handleSave = () => {
+    onSave({ ...initial, quote, author, company });
+  };
+
+  return (
+    <div className="space-y-4">
+      <textarea
+        placeholder="Quote"
+        value={quote}
+        onChange={(e) => setQuote(e.target.value)}
+        rows={3}
+        style={{
+          width: "100%", padding: "8px 12px", border: "1px solid #e5e7eb",
+          borderRadius: "6px", fontSize: "14px", resize: "vertical",
+          outline: "none", fontFamily: "inherit", boxSizing: "border-box"
+        }}
+      />
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+        <input
+          placeholder="Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          style={{
+            padding: "8px 12px", border: "1px solid #e5e7eb",
+            borderRadius: "6px", fontSize: "14px", outline: "none", fontFamily: "inherit"
+          }}
+        />
+        <input
+          placeholder="Company"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          style={{
+            padding: "8px 12px", border: "1px solid #e5e7eb",
+            borderRadius: "6px", fontSize: "14px", outline: "none", fontFamily: "inherit"
+          }}
+        />
+      </div>
+      <Button onClick={handleSave} disabled={isPending}>
+        <Save className="w-4 h-4 mr-1" /> Save
+      </Button>
+    </div>
+  );
+}
 
 export default function AdminTestimonials() {
   const queryClient = useQueryClient();
   const [editing, setEditing] = useState(null);
-  const [form, setForm] = useState({});
+  const [editTarget, setEditTarget] = useState(null);
 
   const { data: testimonials = [] } = useQuery({
     queryKey: ["admin-testimonials"],
@@ -19,12 +67,12 @@ export default function AdminTestimonials() {
 
   const createMutation = useMutation({
     mutationFn: (data) => base44.entities.Testimonial.create(data),
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }); resetForm(); },
+    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }); setEditing(null); setEditTarget(null); },
   });
 
   const updateMutation = useMutation({
     mutationFn: ({ id, data }) => base44.entities.Testimonial.update(id, data),
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }); resetForm(); },
+    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }); setEditing(null); setEditTarget(null); },
   });
 
   const deleteMutation = useMutation({
@@ -32,40 +80,51 @@ export default function AdminTestimonials() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }),
   });
 
-  const resetForm = () => { setEditing(null); setForm({}); };
+  const handleSave = useCallback((formData) => {
+    if (editing === "new") {
+      createMutation.mutate(formData);
+    } else {
+      updateMutation.mutate({ id: editing, data: formData });
+    }
+  }, [editing]);
+
+  const startNew = () => {
+    setEditTarget({ quote: "", author: "", company: "", order: testimonials.length });
+    setEditing("new");
+  };
+
+  const startEdit = (t) => {
+    setEditTarget({ ...t });
+    setEditing(t.id);
+  };
+
+  const cancel = () => { setEditing(null); setEditTarget(null); };
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold text-gray-900">Testimonials</h2>
-        <Button onClick={() => { setEditing("new"); setForm({ quote: "", author: "", company: "", order: testimonials.length }); }} size="sm">
+        <Button onClick={startNew} size="sm">
           <Plus className="w-4 h-4 mr-1" /> Add Testimonial
         </Button>
       </div>
 
-      {editing && (
+      {editing && editTarget && (
         <Card className="border-blue-200 bg-blue-50/50">
           <CardHeader className="pb-4">
             <CardTitle className="text-base flex items-center justify-between">
               {editing === "new" ? "New Testimonial" : "Edit Testimonial"}
-              <Button variant="ghost" size="icon" onClick={resetForm}><X className="w-4 h-4" /></Button>
+              <Button variant="ghost" size="icon" onClick={cancel}><X className="w-4 h-4" /></Button>
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <textarea
-              placeholder="Quote"
-              value={form.quote || ""}
-              onChange={(e) => setForm(prev => ({ ...prev, quote: e.target.value }))}
-              rows={3}
-              style={{ width: "100%", padding: "8px 12px", border: "1px solid #e5e7eb", borderRadius: "6px", fontSize: "14px", resize: "vertical", outline: "none" }}
+          <CardContent>
+            <TestimonialForm
+              key={editing}
+              initial={editTarget}
+              onSave={handleSave}
+              onCancel={cancel}
+              isPending={createMutation.isPending || updateMutation.isPending}
             />
-            <div className="grid grid-cols-2 gap-4">
-              <Input placeholder="Author" value={form.author || ""} onChange={(e) => setForm(prev => ({ ...prev, author: e.target.value }))} />
-              <Input placeholder="Company" value={form.company || ""} onChange={(e) => setForm(prev => ({ ...prev, company: e.target.value }))} />
-            </div>
-            <Button onClick={() => editing === "new" ? createMutation.mutate(form) : updateMutation.mutate({ id: editing, data: form })}>
-              <Save className="w-4 h-4 mr-1" /> Save
-            </Button>
           </CardContent>
         </Card>
       )}
@@ -79,7 +138,7 @@ export default function AdminTestimonials() {
               <p className="text-xs text-gray-500 mt-1">— {t.author}{t.company ? `, ${t.company}` : ""}</p>
             </div>
             <div className="flex gap-1 flex-shrink-0">
-              <Button variant="ghost" size="sm" onClick={() => { setEditing(t.id); setForm({ ...t }); }}>Edit</Button>
+              <Button variant="ghost" size="sm" onClick={() => startEdit(t)}>Edit</Button>
               <Button variant="ghost" size="icon" className="text-red-500" onClick={() => deleteMutation.mutate(t.id)}>
                 <Trash2 className="w-4 h-4" />
               </Button>
