@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { base44 } from "@/api/base44Client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Upload, Trash2, Copy, Check, ImageIcon, Loader2 } from "lucide-react";
@@ -7,6 +7,7 @@ export default function AdminMedia() {
   const queryClient = useQueryClient();
   const [uploading, setUploading] = useState(false);
   const [copied, setCopied] = useState(null);
+  const fileInputRef = useRef(null);
 
   const { data: media = [], isLoading } = useQuery({
     queryKey: ["media-library"],
