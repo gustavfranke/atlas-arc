@@ -126,13 +126,16 @@ export default function AdminPortfolio() {
             <div>
               <label className="text-sm font-medium text-gray-700 mb-2 block">Cover Image</label>
               <div className="flex items-center gap-4 flex-wrap">
-                <label className="cursor-pointer">
-                  <input type="file" accept="image/*" onChange={handleCoverUpload} className="hidden" disabled={uploadingCover} />
-                  <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm transition-all select-none ${uploadingCover ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}>
-                    {uploadingCover ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-                    {uploadingCover ? "Uploading..." : "Upload from device"}
-                  </div>
-                </label>
+                <button
+                  type="button"
+                  onClick={() => coverInputRef.current?.click()}
+                  disabled={uploadingCover}
+                  className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm transition-all select-none ${uploadingCover ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}
+                >
+                  {uploadingCover ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                  {uploadingCover ? "Uploading..." : "Upload from device"}
+                </button>
+                <input ref={coverInputRef} type="file" accept="image/*" onChange={handleCoverUpload} className="hidden" disabled={uploadingCover} />
                 {form.cover_image && (
                   <div className="relative group">
                     <img src={form.cover_image} alt="" className="w-16 h-16 object-cover rounded border" />
