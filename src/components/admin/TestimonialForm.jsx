@@ -1,14 +1,17 @@
-import React, { useState, memo } from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Save } from "lucide-react";
 
-const TestimonialForm = memo(function TestimonialForm({ initial, onSave, isPending }) {
-  const [quote, setQuote] = useState(initial.quote || "");
-  const [author, setAuthor] = useState(initial.author || "");
-  const [company, setCompany] = useState(initial.company || "");
+export default function TestimonialForm({ initial, onSave }) {
+  const [quote, setQuote] = useState(initial?.quote || "");
+  const [author, setAuthor] = useState(initial?.author || "");
+  const [company, setCompany] = useState(initial?.company || "");
+  const [saving, setSaving] = useState(false);
 
-  const handleSave = () => {
-    onSave({ ...initial, quote, author, company });
+  const handleSave = async () => {
+    setSaving(true);
+    await onSave({ ...initial, quote, author, company });
+    setSaving(false);
   };
 
   return (
@@ -44,11 +47,9 @@ const TestimonialForm = memo(function TestimonialForm({ initial, onSave, isPendi
           }}
         />
       </div>
-      <Button onClick={handleSave} disabled={isPending}>
-        <Save className="w-4 h-4 mr-1" /> Save
+      <Button onClick={handleSave} disabled={saving}>
+        <Save className="w-4 h-4 mr-1" /> {saving ? "Saving..." : "Save"}
       </Button>
     </div>
   );
-});
-
-export default TestimonialForm;
+}
