@@ -14,6 +14,8 @@ export default function AdminPortfolio() {
   const queryClient = useQueryClient();
   const [editing, setEditing] = useState(null);
   const [form, setForm] = useState({});
+  const [uploadingCover, setUploadingCover] = useState(false);
+  const [uploadingMedia, setUploadingMedia] = useState(false);
 
   const { data: projects = [], isLoading } = useQuery({
     queryKey: ["admin-portfolio"],
@@ -44,7 +46,7 @@ export default function AdminPortfolio() {
 
   const startNew = () => {
     setEditing("new");
-    setForm({ title: "", category: "", location: "", description: "", deliverables: [], cover_image: "", video_url: "", order: projects.length });
+    setForm({ title: "", category: "", location: "", description: "", deliverables: [], cover_image: "", video_url: "", media_urls: [], order: projects.length });
   };
 
   const handleSave = () => {
@@ -59,16 +61,14 @@ export default function AdminPortfolio() {
     }
   };
 
-  const [uploadingCover, setUploadingCover] = useState(false);
-  const [uploadingMedia, setUploadingMedia] = useState(false);
-
-  const handleFileUpload = async (e) => {
+  const handleCoverUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
     setUploadingCover(true);
     const { file_url } = await base44.integrations.Core.UploadFile({ file });
     setForm(prev => ({ ...prev, cover_image: file_url }));
     setUploadingCover(false);
+    e.target.value = "";
   };
 
   const handleMediaUpload = async (e) => {
@@ -116,47 +116,58 @@ export default function AdminPortfolio() {
               <Input placeholder="Location" value={form.location || ""} onChange={(e) => setForm({ ...form, location: e.target.value })} />
               <Input placeholder="Video URL (YouTube/Vimeo)" value={form.video_url || ""} onChange={(e) => setForm({ ...form, video_url: e.target.value })} />
             </div>
+
             <Textarea placeholder="Description" value={form.description || ""} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={3} />
             <Input placeholder="Deliverables (comma separated)" value={Array.isArray(form.deliverables) ? form.deliverables.join(", ") : form.deliverables || ""} onChange={(e) => setForm({ ...form, deliverables: e.target.value })} />
-            {/* Cover Image */}
+
+            {/* Cover Image Upload */}
             <div>
               <label className="text-sm font-medium text-gray-700 mb-2 block">Cover Image</label>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap">
                 <label className="cursor-pointer">
-                  <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" disabled={uploadingCover} />
-                  <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm transition-all ${uploadingCover ? "bg-gray-100 text-gray-400" : "hover:bg-gray-50 text-gray-700"}`}>
+                  <input type="file" accept="image/*" onChange={handleCoverUpload} className="hidden" disabled={uploadingCover} />
+                  <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm transition-all select-none ${uploadingCover ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}>
                     {uploadingCover ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-                    {uploadingCover ? "Uploading..." : "Upload Cover"}
+                    {uploadingCover ? "Uploading..." : "Upload from device"}
                   </div>
                 </label>
                 {form.cover_image && (
-                  <div className="relative">
+                  <div className="relative group">
                     <img src={form.cover_image} alt="" className="w-16 h-16 object-cover rounded border" />
-                    <button onClick={() => setForm(prev => ({ ...prev, cover_image: "" }))} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">×</button>
+                    <button
+                      onClick={() => setForm(prev => ({ ...prev, cover_image: "" }))}
+                      className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600"
+                    >×</button>
                   </div>
                 )}
               </div>
             </div>
 
-            {/* Media Gallery */}
+            {/* Media Gallery Upload */}
             <div>
-              <label className="text-sm font-medium text-gray-700 mb-2 block">Gallery Media (Images)</label>
-              <div className="flex flex-wrap gap-2 mb-2">
-                {(form.media_urls || []).map((url, i) => (
-                  <div key={i} className="relative">
-                    <img src={url} alt="" className="w-16 h-16 object-cover rounded border" />
-                    <button onClick={() => removeMediaUrl(i)} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">×</button>
-                  </div>
-                ))}
-              </div>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">Gallery Images</label>
+              {(form.media_urls || []).length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {(form.media_urls || []).map((url, i) => (
+                    <div key={i} className="relative">
+                      <img src={url} alt="" className="w-16 h-16 object-cover rounded border" />
+                      <button
+                        onClick={() => removeMediaUrl(i)}
+                        className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600"
+                      >×</button>
+                    </div>
+                  ))}
+                </div>
+              )}
               <label className="cursor-pointer">
                 <input type="file" accept="image/*" multiple onChange={handleMediaUpload} className="hidden" disabled={uploadingMedia} />
-                <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm w-fit transition-all ${uploadingMedia ? "bg-gray-100 text-gray-400" : "hover:bg-gray-50 text-gray-700"}`}>
+                <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm w-fit transition-all select-none ${uploadingMedia ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}>
                   {uploadingMedia ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-                  {uploadingMedia ? "Uploading..." : "Add Images"}
+                  {uploadingMedia ? "Uploading..." : "Upload images from device"}
                 </div>
               </label>
             </div>
+
             <Input type="number" placeholder="Order" value={form.order || 0} onChange={(e) => setForm({ ...form, order: parseInt(e.target.value) })} />
             <Button onClick={handleSave} disabled={createMutation.isPending || updateMutation.isPending}>
               <Save className="w-4 h-4 mr-1" /> {editing === "new" ? "Create" : "Save Changes"}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { base44 } from "@/api/base44Client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { Button } from "@/components/ui/button";
 import { Upload, Trash2, Copy, Check, ImageIcon, Loader2 } from "lucide-react";
 
 export default function AdminMedia() {
@@ -51,7 +50,7 @@ export default function AdminMedia() {
         </div>
         <label className="cursor-pointer">
           <input type="file" accept="image/*" multiple className="hidden" onChange={handleUpload} disabled={uploading} />
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all ${uploading ? "bg-gray-200 text-gray-400" : "bg-gray-900 text-white hover:bg-gray-700"}`}>
+          <div className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all select-none ${uploading ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-gray-900 text-white hover:bg-gray-700 cursor-pointer"}`}>
             {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
             {uploading ? "Uploading..." : "Upload Images"}
           </div>
@@ -64,7 +63,7 @@ export default function AdminMedia() {
         <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-gray-200 rounded-xl text-center">
           <ImageIcon className="w-10 h-10 text-gray-300 mb-3" />
           <p className="text-gray-500 text-sm">No media uploaded yet.</p>
-          <p className="text-gray-400 text-xs mt-1">Upload images using the button above.</p>
+          <p className="text-gray-400 text-xs mt-1">Click "Upload Images" above to add files from your device.</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
