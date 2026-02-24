@@ -118,12 +118,44 @@ export default function AdminPortfolio() {
             </div>
             <Textarea placeholder="Description" value={form.description || ""} onChange={(e) => setForm({ ...form, description: e.target.value })} rows={3} />
             <Input placeholder="Deliverables (comma separated)" value={Array.isArray(form.deliverables) ? form.deliverables.join(", ") : form.deliverables || ""} onChange={(e) => setForm({ ...form, deliverables: e.target.value })} />
-            <div className="flex items-center gap-4">
-              <div>
-                <label className="text-sm text-gray-600 mb-1 block">Cover Image</label>
-                <input type="file" accept="image/*" onChange={handleFileUpload} className="text-sm" />
+            {/* Cover Image */}
+            <div>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">Cover Image</label>
+              <div className="flex items-center gap-4">
+                <label className="cursor-pointer">
+                  <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" disabled={uploadingCover} />
+                  <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm transition-all ${uploadingCover ? "bg-gray-100 text-gray-400" : "hover:bg-gray-50 text-gray-700"}`}>
+                    {uploadingCover ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                    {uploadingCover ? "Uploading..." : "Upload Cover"}
+                  </div>
+                </label>
+                {form.cover_image && (
+                  <div className="relative">
+                    <img src={form.cover_image} alt="" className="w-16 h-16 object-cover rounded border" />
+                    <button onClick={() => setForm(prev => ({ ...prev, cover_image: "" }))} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">×</button>
+                  </div>
+                )}
               </div>
-              {form.cover_image && <img src={form.cover_image} alt="" className="w-16 h-16 object-cover rounded" />}
+            </div>
+
+            {/* Media Gallery */}
+            <div>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">Gallery Media (Images)</label>
+              <div className="flex flex-wrap gap-2 mb-2">
+                {(form.media_urls || []).map((url, i) => (
+                  <div key={i} className="relative">
+                    <img src={url} alt="" className="w-16 h-16 object-cover rounded border" />
+                    <button onClick={() => removeMediaUrl(i)} className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">×</button>
+                  </div>
+                ))}
+              </div>
+              <label className="cursor-pointer">
+                <input type="file" accept="image/*" multiple onChange={handleMediaUpload} className="hidden" disabled={uploadingMedia} />
+                <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm w-fit transition-all ${uploadingMedia ? "bg-gray-100 text-gray-400" : "hover:bg-gray-50 text-gray-700"}`}>
+                  {uploadingMedia ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                  {uploadingMedia ? "Uploading..." : "Add Images"}
+                </div>
+              </label>
             </div>
             <Input type="number" placeholder="Order" value={form.order || 0} onChange={(e) => setForm({ ...form, order: parseInt(e.target.value) })} />
             <Button onClick={handleSave} disabled={createMutation.isPending || updateMutation.isPending}>
