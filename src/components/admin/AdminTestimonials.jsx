@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { base44 } from "@/api/base44Client";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Trash2, X, Quote } from "lucide-react";
@@ -15,39 +15,24 @@ export default function AdminTestimonials() {
     queryKey: ["admin-testimonials"],
     queryFn: () => base44.entities.Testimonial.list("order", 50),
     refetchOnWindowFocus: false,
-    staleTime: 30000,
+    staleTime: Infinity,
   });
 
-  const createMutation = useMutation({
-    mutationFn: (data) => base44.entities.Testimonial.create(data),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
-      setEditing(null);
-      setEditTarget(null);
-    },
-  });
-
-  const updateMutation = useMutation({
-    mutationFn: ({ id, data }) => base44.entities.Testimonial.update(id, data),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
-      setEditing(null);
-      setEditTarget(null);
-    },
-  });
-
-  const deleteMutation = useMutation({
-    mutationFn: (id) => base44.entities.Testimonial.delete(id),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }),
-  });
-
-  const handleSave = useCallback((formData) => {
+  const handleSave = async (formData) => {
     if (editing === "new") {
-      createMutation.mutate(formData);
+      await base44.entities.Testimonial.create(formData);
     } else {
-      updateMutation.mutate({ id: editing, data: formData });
+      await base44.entities.Testimonial.update(editing, formData);
     }
-  }, [editing]);
+    await queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
+    setEditing(null);
+    setEditTarget(null);
+  };
+
+  const handleDelete = async (id) => {
+    await base44.entities.Testimonial.delete(id);
+    queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
+  };
 
   const startNew = () => {
     setEditing("new");
@@ -86,7 +71,6 @@ export default function AdminTestimonials() {
               key={editing}
               initial={editTarget}
               onSave={handleSave}
-              isPending={createMutation.isPending || updateMutation.isPending}
             />
           </CardContent>
         </Card>
@@ -102,7 +86,7 @@ export default function AdminTestimonials() {
             </div>
             <div className="flex gap-1 flex-shrink-0">
               <Button variant="ghost" size="sm" onClick={() => startEdit(t)}>Edit</Button>
-              <Button variant="ghost" size="icon" className="text-red-500" onClick={() => deleteMutation.mutate(t.id)}>
+              <Button variant="ghost" size="icon" className="text-red-500" onClick={() => handleDelete(t.id)}>
                 <Trash2 className="w-4 h-4" />
               </Button>
             </div>
