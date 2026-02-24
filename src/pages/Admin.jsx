@@ -3,10 +3,12 @@ import { base44 } from "@/api/base44Client";
 import AdminPortfolio from "@/components/admin/AdminPortfolio";
 import AdminTestimonials from "@/components/admin/AdminTestimonials";
 import AdminSubmissions from "@/components/admin/AdminSubmissions";
-import { Layers, MessageSquare, Inbox, ExternalLink } from "lucide-react";
+import AdminMedia from "@/components/admin/AdminMedia";
+import { Layers, MessageSquare, Inbox, ExternalLink, ImageIcon } from "lucide-react";
 
 const tabs = [
   { key: "portfolio", label: "Portfolio", icon: Layers },
+  { key: "media", label: "Media", icon: ImageIcon },
   { key: "testimonials", label: "Testimonials", icon: MessageSquare },
   { key: "submissions", label: "Submissions", icon: Inbox },
 ];
