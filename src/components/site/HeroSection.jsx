@@ -31,7 +31,7 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs md:text-sm font-light mb-8">
-            Atlas & Arc — Creative Studio
+            Arc — Creative Studio
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 text-[#a09888] text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Atlas & Arc is a boutique creative studio specializing in high-end photography, film, and branded storytelling for hotels, retreats, travel brands, and purpose-led businesses.
+          Arc is a boutique creative studio specializing in high-end photography, film, and branded storytelling for hotels, retreats, travel brands, and purpose-led businesses.
         </motion.p>
 
         <motion.p

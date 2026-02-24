@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="max-w-lg">
-            <p className="text-[#f5f0e8] text-lg font-light tracking-tight">Atlas & Arc</p>
+            <p className="text-[#f5f0e8] text-lg font-light tracking-tight">Arc</p>
             <p className="mt-3 text-[#5a5248] text-sm font-light leading-relaxed">
               A boutique creative studio crafting cinematic storytelling for travel, hospitality, and premium lifestyle brands worldwide.
             </p>
@@ -35,7 +35,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-[#141210] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[#3a3530] text-xs font-light">
-            © {new Date().getFullYear()} Atlas & Arc. All rights reserved.
+            © {new Date().getFullYear()} Arc. All rights reserved.
           </p>
           <p className="text-[#3a3530] text-xs font-light">
             Privacy Policy

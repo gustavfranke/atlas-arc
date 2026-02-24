@@ -41,7 +41,7 @@ export default function Navbar() {
           >
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/ba4be0df8_Logov3.png"
-              alt="Atlas & Arc"
+              alt="Arc"
               className="h-8 md:h-10 w-auto"
             />
           </button>
