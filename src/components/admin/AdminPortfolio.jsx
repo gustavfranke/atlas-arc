@@ -164,13 +164,16 @@ export default function AdminPortfolio() {
                   ))}
                 </div>
               )}
-              <label className="cursor-pointer">
-                <input type="file" accept="image/*" multiple onChange={handleMediaUpload} className="hidden" disabled={uploadingMedia} />
-                <div className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm w-fit transition-all select-none ${uploadingMedia ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}>
-                  {uploadingMedia ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-                  {uploadingMedia ? "Uploading..." : "Upload images from device"}
-                </div>
-              </label>
+              <button
+                type="button"
+                onClick={() => mediaInputRef.current?.click()}
+                disabled={uploadingMedia}
+                className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm w-fit transition-all select-none ${uploadingMedia ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}
+              >
+                {uploadingMedia ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                {uploadingMedia ? "Uploading..." : "Upload images from device"}
+              </button>
+              <input ref={mediaInputRef} type="file" accept="image/*" multiple onChange={handleMediaUpload} className="hidden" disabled={uploadingMedia} />
             </div>
 
             <Input type="number" placeholder="Order" value={form.order || 0} onChange={(e) => setForm({ ...form, order: parseInt(e.target.value) })} />
