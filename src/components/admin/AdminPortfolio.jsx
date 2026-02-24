@@ -25,6 +25,15 @@ export default function AdminPortfolio() {
     queryFn: () => base44.entities.PortfolioProject.list("order", 50),
   });
 
+  const { data: catRecord } = useQuery({
+    queryKey: ["portfolio-categories"],
+    queryFn: async () => {
+      const records = await base44.entities.SiteContent.filter({ section_key: "portfolio_categories" });
+      return records.length > 0 ? records[0] : null;
+    },
+  });
+  const categories = catRecord?.content?.categories ?? DEFAULT_CATEGORIES;
+
   const createMutation = useMutation({
     mutationFn: (data) => base44.entities.PortfolioProject.create(data),
     onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-portfolio"] }); resetForm(); },
