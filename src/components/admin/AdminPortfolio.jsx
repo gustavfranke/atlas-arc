@@ -7,8 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Trash2, Save, X, GripVertical, Upload, Loader2 } from "lucide-react";
+import AdminPortfolioCategories from "./AdminPortfolioCategories";
 
-const categories = ["Hotels & Lodges", "Retreats & Wellness", "Lifestyle Brands", "Short Form Reels", "Photography"];
+const DEFAULT_CATEGORIES = ["Hotels & Lodges", "Retreats & Wellness", "Lifestyle Brands", "Short Form Reels", "Photography"];
 
 export default function AdminPortfolio() {
   const queryClient = useQueryClient();
