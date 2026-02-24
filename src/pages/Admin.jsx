@@ -53,6 +53,9 @@ export default function Admin() {
           <p className="text-xs text-gray-500">Manage your website content</p>
         </div>
         <div className="flex items-center gap-4">
+          <a href="/Admin" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 flex items-center gap-1 transition-colors">
+            <ExternalLink className="w-3 h-3" /> Admin Page
+          </a>
           <a href="/" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 flex items-center gap-1 transition-colors">
             <ExternalLink className="w-3 h-3" /> View Site
           </a>
