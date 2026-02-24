@@ -59,11 +59,34 @@ export default function AdminPortfolio() {
     }
   };
 
+  const [uploadingCover, setUploadingCover] = useState(false);
+  const [uploadingMedia, setUploadingMedia] = useState(false);
+
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
+    setUploadingCover(true);
     const { file_url } = await base44.integrations.Core.UploadFile({ file });
     setForm(prev => ({ ...prev, cover_image: file_url }));
+    setUploadingCover(false);
+  };
+
+  const handleMediaUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
+    setUploadingMedia(true);
+    const urls = [];
+    for (const file of files) {
+      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      urls.push(file_url);
+    }
+    setForm(prev => ({ ...prev, media_urls: [...(prev.media_urls || []), ...urls] }));
+    setUploadingMedia(false);
+    e.target.value = "";
+  };
+
+  const removeMediaUrl = (index) => {
+    setForm(prev => ({ ...prev, media_urls: prev.media_urls.filter((_, i) => i !== index) }));
   };
 
   return (

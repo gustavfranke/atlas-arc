@@ -85,6 +85,7 @@ export default function Admin() {
 
         {/* Content */}
         {activeTab === "portfolio" && <AdminPortfolio />}
+        {activeTab === "media" && <AdminMedia />}
         {activeTab === "testimonials" && <AdminTestimonials />}
         {activeTab === "submissions" && <AdminSubmissions />}
       </div>
