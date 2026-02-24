@@ -60,8 +60,8 @@ export default function AdminTestimonials() {
               style={{ width: "100%", padding: "8px 12px", border: "1px solid #e5e7eb", borderRadius: "6px", fontSize: "14px", resize: "vertical", outline: "none" }}
             />
             <div className="grid grid-cols-2 gap-4">
-              <Input placeholder="Author" value={form.author || ""} onChange={(e) => setForm({ ...form, author: e.target.value })} />
-              <Input placeholder="Company" value={form.company || ""} onChange={(e) => setForm({ ...form, company: e.target.value })} />
+              <Input placeholder="Author" value={form.author || ""} onChange={(e) => setForm(prev => ({ ...prev, author: e.target.value }))} />
+              <Input placeholder="Company" value={form.company || ""} onChange={(e) => setForm(prev => ({ ...prev, company: e.target.value }))} />
             </div>
             <Button onClick={() => editing === "new" ? createMutation.mutate(form) : updateMutation.mutate({ id: editing, data: form })}>
               <Save className="w-4 h-4 mr-1" /> Save
