@@ -49,4 +49,6 @@ const TestimonialForm = memo(function TestimonialForm({ initial, onSave, isPendi
       </Button>
     </div>
   );
-}
+});
+
+export default TestimonialForm;
