@@ -78,6 +78,15 @@ export default function PortfolioSection() {
     initialData: [],
   });
 
+  const { data: catRecord } = useQuery({
+    queryKey: ["portfolio-categories"],
+    queryFn: async () => {
+      const records = await base44.entities.SiteContent.filter({ section_key: "portfolio_categories" });
+      return records.length > 0 ? records[0] : null;
+    },
+  });
+  const categories = ["All", ...(catRecord?.content?.categories ?? DEFAULT_CATEGORIES)];
+
   const projects = dbProjects.length > 0 ? dbProjects : fallbackProjects;
 
   const filtered = activeCategory === "All"
