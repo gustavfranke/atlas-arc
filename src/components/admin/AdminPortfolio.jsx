@@ -16,6 +16,8 @@ export default function AdminPortfolio() {
   const [form, setForm] = useState({});
   const [uploadingCover, setUploadingCover] = useState(false);
   const [uploadingMedia, setUploadingMedia] = useState(false);
+  const coverInputRef = useRef(null);
+  const mediaInputRef = useRef(null);
 
   const { data: projects = [], isLoading } = useQuery({
     queryKey: ["admin-portfolio"],

@@ -49,13 +49,15 @@ export default function AdminMedia() {
           <h2 className="text-xl font-semibold text-gray-900">Media Library</h2>
           <p className="text-sm text-gray-500 mt-0.5">{media.length} file{media.length !== 1 ? "s" : ""} uploaded</p>
         </div>
-        <label className="cursor-pointer">
-          <input type="file" accept="image/*" multiple className="hidden" onChange={handleUpload} disabled={uploading} />
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all select-none ${uploading ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-gray-900 text-white hover:bg-gray-700 cursor-pointer"}`}>
-            {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-            {uploading ? "Uploading..." : "Upload Images"}
-          </div>
-        </label>
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          disabled={uploading}
+          className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all select-none ${uploading ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-gray-900 text-white hover:bg-gray-700 cursor-pointer"}`}
+        >
+          {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+          {uploading ? "Uploading..." : "Upload Images"}
+        </button>
+        <input ref={fileInputRef} type="file" accept="image/*" multiple className="hidden" onChange={handleUpload} disabled={uploading} />
       </div>
 
       {isLoading ? (
