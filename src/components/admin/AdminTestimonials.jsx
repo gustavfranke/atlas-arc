@@ -41,13 +41,13 @@ export default function AdminTestimonials() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }),
   });
 
-  const handleSave = (formData) => {
+  const handleSave = useCallback((formData) => {
     if (editing === "new") {
       createMutation.mutate(formData);
     } else {
       updateMutation.mutate({ id: editing, data: formData });
     }
-  };
+  }, [editing]);
 
   const startNew = () => {
     setEditing("new");
