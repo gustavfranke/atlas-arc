@@ -37,9 +37,13 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-[#f5f0e8] text-sm md:text-base tracking-[0.15em] font-light uppercase"
+            className="flex items-center"
           >
-            Atlas <span className="text-[#c9a96e]">&</span> Arc
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/ac1c9fe29_Logov2.png"
+              alt="Atlas & Arc"
+              className="h-8 md:h-10 w-auto"
+            />
           </button>
 
           {/* Desktop Links */}
