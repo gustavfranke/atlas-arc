@@ -62,6 +62,8 @@ export default function AdminTestimonials() {
   const { data: testimonials = [] } = useQuery({
     queryKey: ["admin-testimonials"],
     queryFn: () => base44.entities.Testimonial.list("order", 50),
+    refetchOnWindowFocus: false,
+    staleTime: 30000,
   });
 
   const createMutation = useMutation({
