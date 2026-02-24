@@ -40,7 +40,7 @@ export default function Navbar() {
             className="flex items-center"
           >
             <img
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/7c30c1174_Logov4.png"
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/ba4be0df8_Logov3.png"
               alt="Atlas & Arc"
               className="h-8 md:h-10 w-auto"
             />
