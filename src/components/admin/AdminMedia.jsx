@@ -49,15 +49,32 @@ export default function AdminMedia() {
           <h2 className="text-xl font-semibold text-gray-900">Media Library</h2>
           <p className="text-sm text-gray-500 mt-0.5">{media.length} file{media.length !== 1 ? "s" : ""} uploaded</p>
         </div>
-        <button
-          onClick={() => fileInputRef.current?.click()}
-          disabled={uploading}
-          className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all select-none ${uploading ? "bg-gray-200 text-gray-400 cursor-not-allowed" : "bg-gray-900 text-white hover:bg-gray-700 cursor-pointer"}`}
-        >
-          {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-          {uploading ? "Uploading..." : "Upload Images"}
-        </button>
-        <input ref={fileInputRef} type="file" accept="image/*" multiple className="hidden" onChange={handleUpload} disabled={uploading} />
+        <div>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            multiple
+            style={{ display: "none" }}
+            onChange={handleUpload}
+          />
+          <button
+            type="button"
+            onClick={() => fileInputRef.current && fileInputRef.current.click()}
+            disabled={uploading}
+            style={{
+              display: "flex", alignItems: "center", gap: "8px",
+              padding: "8px 16px", borderRadius: "6px", fontSize: "14px", fontWeight: 500,
+              background: uploading ? "#e5e7eb" : "#111827",
+              color: uploading ? "#9ca3af" : "white",
+              cursor: uploading ? "not-allowed" : "pointer",
+              border: "none"
+            }}
+          >
+            {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+            {uploading ? "Uploading..." : "Upload Images"}
+          </button>
+        </div>
       </div>
 
       {isLoading ? (
@@ -81,6 +98,7 @@ export default function AdminMedia() {
                 <p className="text-white text-xs text-center truncate w-full px-1">{item.file_name}</p>
                 <div className="flex gap-1">
                   <button
+                    type="button"
                     onClick={() => copyUrl(item.file_url, item.id)}
                     className="p-1.5 bg-white/20 hover:bg-white/40 rounded text-white transition-colors"
                     title="Copy URL"
@@ -88,6 +106,7 @@ export default function AdminMedia() {
                     {copied === item.id ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                   </button>
                   <button
+                    type="button"
                     onClick={() => deleteMutation.mutate(item.id)}
                     className="p-1.5 bg-red-500/70 hover:bg-red-500 rounded text-white transition-colors"
                     title="Delete"

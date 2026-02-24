@@ -124,24 +124,31 @@ export default function AdminPortfolio() {
 
             {/* Cover Image Upload */}
             <div>
-              <label className="text-sm font-medium text-gray-700 mb-2 block">Cover Image</label>
+              <p className="text-sm font-medium text-gray-700 mb-2">Cover Image</p>
               <div className="flex items-center gap-4 flex-wrap">
+                <input
+                  ref={coverInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleCoverUpload}
+                  style={{ display: "none" }}
+                />
                 <button
                   type="button"
-                  onClick={() => coverInputRef.current?.click()}
+                  onClick={() => coverInputRef.current && coverInputRef.current.click()}
                   disabled={uploadingCover}
-                  className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm transition-all select-none ${uploadingCover ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}
+                  style={{ display: "flex", alignItems: "center", gap: "8px", padding: "8px 12px", border: "1px solid #d1d5db", borderRadius: "6px", fontSize: "14px", background: uploadingCover ? "#f3f4f6" : "white", color: uploadingCover ? "#9ca3af" : "#374151", cursor: uploadingCover ? "not-allowed" : "pointer" }}
                 >
                   {uploadingCover ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
                   {uploadingCover ? "Uploading..." : "Upload from device"}
                 </button>
-                <input ref={coverInputRef} type="file" accept="image/*" onChange={handleCoverUpload} className="hidden" disabled={uploadingCover} />
                 {form.cover_image && (
-                  <div className="relative group">
-                    <img src={form.cover_image} alt="" className="w-16 h-16 object-cover rounded border" />
+                  <div style={{ position: "relative" }}>
+                    <img src={form.cover_image} alt="" style={{ width: 64, height: 64, objectFit: "cover", borderRadius: 6, border: "1px solid #e5e7eb" }} />
                     <button
+                      type="button"
                       onClick={() => setForm(prev => ({ ...prev, cover_image: "" }))}
-                      className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600"
+                      style={{ position: "absolute", top: -6, right: -6, background: "#ef4444", color: "white", borderRadius: "50%", width: 20, height: 20, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, border: "none", cursor: "pointer" }}
                     >×</button>
                   </div>
                 )}
@@ -150,30 +157,38 @@ export default function AdminPortfolio() {
 
             {/* Media Gallery Upload */}
             <div>
-              <label className="text-sm font-medium text-gray-700 mb-2 block">Gallery Images</label>
+              <p className="text-sm font-medium text-gray-700 mb-2">Gallery Images</p>
               {(form.media_urls || []).length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-3">
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 12 }}>
                   {(form.media_urls || []).map((url, i) => (
-                    <div key={i} className="relative">
-                      <img src={url} alt="" className="w-16 h-16 object-cover rounded border" />
+                    <div key={i} style={{ position: "relative" }}>
+                      <img src={url} alt="" style={{ width: 64, height: 64, objectFit: "cover", borderRadius: 6, border: "1px solid #e5e7eb" }} />
                       <button
+                        type="button"
                         onClick={() => removeMediaUrl(i)}
-                        className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs hover:bg-red-600"
+                        style={{ position: "absolute", top: -6, right: -6, background: "#ef4444", color: "white", borderRadius: "50%", width: 20, height: 20, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, border: "none", cursor: "pointer" }}
                       >×</button>
                     </div>
                   ))}
                 </div>
               )}
+              <input
+                ref={mediaInputRef}
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleMediaUpload}
+                style={{ display: "none" }}
+              />
               <button
                 type="button"
-                onClick={() => mediaInputRef.current?.click()}
+                onClick={() => mediaInputRef.current && mediaInputRef.current.click()}
                 disabled={uploadingMedia}
-                className={`flex items-center gap-2 px-3 py-2 border rounded-md text-sm w-fit transition-all select-none ${uploadingMedia ? "bg-gray-100 text-gray-400 cursor-not-allowed" : "hover:bg-gray-50 text-gray-700 cursor-pointer"}`}
+                style={{ display: "flex", alignItems: "center", gap: "8px", padding: "8px 12px", border: "1px solid #d1d5db", borderRadius: "6px", fontSize: "14px", background: uploadingMedia ? "#f3f4f6" : "white", color: uploadingMedia ? "#9ca3af" : "#374151", cursor: uploadingMedia ? "not-allowed" : "pointer" }}
               >
                 {uploadingMedia ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-                {uploadingMedia ? "Uploading..." : "Upload images from device"}
+                {uploadingMedia ? "Uploading..." : "Upload gallery images"}
               </button>
-              <input ref={mediaInputRef} type="file" accept="image/*" multiple onChange={handleMediaUpload} className="hidden" disabled={uploadingMedia} />
             </div>
 
             <Input type="number" placeholder="Order" value={form.order || 0} onChange={(e) => setForm({ ...form, order: parseInt(e.target.value) })} />
