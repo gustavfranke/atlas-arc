@@ -1,58 +1,10 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, memo } from "react";
 import { base44 } from "@/api/base44Client";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Plus, Trash2, Save, X, Quote } from "lucide-react";
-
-function TestimonialForm({ initial, onSave, onCancel, isPending }) {
-  const [quote, setQuote] = useState(initial.quote || "");
-  const [author, setAuthor] = useState(initial.author || "");
-  const [company, setCompany] = useState(initial.company || "");
-
-  const handleSave = () => {
-    onSave({ ...initial, quote, author, company });
-  };
-
-  return (
-    <div className="space-y-4">
-      <textarea
-        placeholder="Quote"
-        value={quote}
-        onChange={(e) => setQuote(e.target.value)}
-        rows={3}
-        style={{
-          width: "100%", padding: "8px 12px", border: "1px solid #e5e7eb",
-          borderRadius: "6px", fontSize: "14px", resize: "vertical",
-          outline: "none", fontFamily: "inherit", boxSizing: "border-box"
-        }}
-      />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-        <input
-          placeholder="Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          style={{
-            padding: "8px 12px", border: "1px solid #e5e7eb",
-            borderRadius: "6px", fontSize: "14px", outline: "none", fontFamily: "inherit"
-          }}
-        />
-        <input
-          placeholder="Company"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-          style={{
-            padding: "8px 12px", border: "1px solid #e5e7eb",
-            borderRadius: "6px", fontSize: "14px", outline: "none", fontFamily: "inherit"
-          }}
-        />
-      </div>
-      <Button onClick={handleSave} disabled={isPending}>
-        <Save className="w-4 h-4 mr-1" /> Save
-      </Button>
-    </div>
-  );
-}
+import { Plus, Trash2, X, Quote } from "lucide-react";
+import TestimonialForm from "./TestimonialForm";
 
 export default function AdminTestimonials() {
   const queryClient = useQueryClient();
@@ -68,12 +20,20 @@ export default function AdminTestimonials() {
 
   const createMutation = useMutation({
     mutationFn: (data) => base44.entities.Testimonial.create(data),
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }); setEditing(null); setEditTarget(null); },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
+      setEditing(null);
+      setEditTarget(null);
+    },
   });
 
   const updateMutation = useMutation({
     mutationFn: ({ id, data }) => base44.entities.Testimonial.update(id, data),
-    onSuccess: () => { queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }); setEditing(null); setEditTarget(null); },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] });
+      setEditing(null);
+      setEditTarget(null);
+    },
   });
 
   const deleteMutation = useMutation({
@@ -81,25 +41,28 @@ export default function AdminTestimonials() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-testimonials"] }),
   });
 
-  const handleSave = useCallback((formData) => {
+  const handleSave = (formData) => {
     if (editing === "new") {
       createMutation.mutate(formData);
     } else {
       updateMutation.mutate({ id: editing, data: formData });
     }
-  }, [editing]);
+  };
 
   const startNew = () => {
-    setEditTarget({ quote: "", author: "", company: "", order: testimonials.length });
     setEditing("new");
+    setEditTarget({ quote: "", author: "", company: "", order: testimonials.length });
   };
 
   const startEdit = (t) => {
-    setEditTarget({ ...t });
     setEditing(t.id);
+    setEditTarget({ ...t });
   };
 
-  const cancel = () => { setEditing(null); setEditTarget(null); };
+  const cancel = () => {
+    setEditing(null);
+    setEditTarget(null);
+  };
 
   return (
     <div className="space-y-6">
@@ -123,7 +86,6 @@ export default function AdminTestimonials() {
               key={editing}
               initial={editTarget}
               onSave={handleSave}
-              onCancel={cancel}
               isPending={createMutation.isPending || updateMutation.isPending}
             />
           </CardContent>
