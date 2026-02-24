@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { base44 } from "@/api/base44Client";
 import AdminPortfolio from "@/components/admin/AdminPortfolio";
-import AdminTestimonials from "@/components/admin/AdminTestimonials";
+import AdminTestimonials from "@/components/admin/AdminTestimonials.jsx";
 import AdminSubmissions from "@/components/admin/AdminSubmissions";
 import AdminMedia from "@/components/admin/AdminMedia";
 import { Layers, MessageSquare, Inbox, ExternalLink, ImageIcon } from "lucide-react";
