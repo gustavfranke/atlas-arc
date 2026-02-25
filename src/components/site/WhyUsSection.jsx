@@ -23,14 +23,14 @@ export default function WhyUsSection() {
           {...fadeUp}
           className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
         >
-          Why Atlas & Arc
+          Why Arc
         </motion.p>
         <motion.h2
           {...fadeUp}
           transition={{ ...fadeUp.transition, delay: 0.1 }}
           className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight"
         >
-          Why Brands Choose Atlas & Arc
+          Why Brands Choose Arc
         </motion.h2>
 
         <motion.p
