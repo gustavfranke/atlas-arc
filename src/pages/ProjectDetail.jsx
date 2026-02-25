@@ -224,7 +224,13 @@ export default function ProjectDetail() {
             className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-3"
           >
             {project.media_urls.map((url, i) => (
-              <img key={i} src={url} alt="" className="w-full aspect-[4/3] object-cover" />
+              <img
+                key={i}
+                src={url}
+                alt=""
+                className="w-full aspect-[4/3] object-cover cursor-pointer hover:opacity-90 transition-opacity duration-300"
+                onClick={() => openLightbox(i + 1)}
+              />
             ))}
           </motion.div>
         )}
