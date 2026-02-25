@@ -54,6 +54,8 @@ const team = [
 ];
 
 export default function Team() {
+  React.useEffect(() => { window.scrollTo(0, 0); }, []);
+
   return (
     <div className="bg-[#0a0a0a] min-h-screen">
       <Navbar />
