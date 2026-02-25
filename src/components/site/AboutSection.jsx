@@ -112,12 +112,20 @@ export default function AboutSection() {
           transition={{ ...fadeUp.transition, delay: 0.55 }}
           className="mt-12"
         >
-          <button
-            onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-            className="text-[#c9a96e] text-sm uppercase tracking-[0.2em] font-light border-b border-[#c9a96e]/30 pb-1 hover:border-[#c9a96e] transition-all duration-500"
-          >
-            Explore Our Work
-          </button>
+          <div className="flex flex-wrap gap-8 items-center">
+            <button
+              onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+              className="text-[#c9a96e] text-sm uppercase tracking-[0.2em] font-light border-b border-[#c9a96e]/30 pb-1 hover:border-[#c9a96e] transition-all duration-500"
+            >
+              Explore Our Work
+            </button>
+            <Link
+              to={createPageUrl("Team")}
+              className="text-[#a09888] text-sm uppercase tracking-[0.2em] font-light border-b border-[#a09888]/30 pb-1 hover:text-[#c9a96e] hover:border-[#c9a96e] transition-all duration-500"
+            >
+              Meet the Team
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
