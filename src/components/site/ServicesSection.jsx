@@ -22,8 +22,8 @@ const services = [
   },
   {
     icon: Layers,
-    title: "Social Media Content Packages",
-    desc: "High-volume, high-quality content delivered in a way that gives your brand consistency without sacrificing aesthetic.",
+    title: "Social Media Content Packages & Management",
+    desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic.",
   },
   {
     icon: Compass,
