@@ -64,9 +64,12 @@ export default function TestimonialsSection() {
               <p className="text-[#d4ccc0] font-light leading-relaxed text-sm md:text-base flex-1 italic">
                 "{t.quote}"
               </p>
-              <p className="mt-6 text-[#6b6156] text-xs uppercase tracking-[0.15em]">
-                — {t.author}
-              </p>
+              <div className="mt-6">
+                <p className="text-[#a09888] text-xs uppercase tracking-[0.15em]">— {t.author}</p>
+                {t.company && (
+                  <p className="text-[#6b6156] text-xs uppercase tracking-[0.15em] mt-1">{t.company}</p>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
