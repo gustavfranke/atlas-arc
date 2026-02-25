@@ -73,6 +73,7 @@ export default function ServicesSection() {
               </motion.div>
             );
           })}
+          <div className="bg-[#0d0c0a] p-8 md:p-10" />
         </div>
       </div>
     </section>
