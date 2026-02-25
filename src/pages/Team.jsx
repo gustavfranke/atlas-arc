@@ -35,7 +35,7 @@ const team = [
       "As trust builds, so does creative momentum, allowing Simon to capture honest, human imagery that connects far beyond the frame.",
     ],
     socials: [
-      { icon: Instagram, label: "Instagram", href: "#" },
+      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/simon_watson_photo" },
     ],
   },
   {
