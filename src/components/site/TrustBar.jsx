@@ -10,7 +10,7 @@ export default function TrustBar() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-[#6b6156] uppercase tracking-[0.3em] text-xs font-light"
+          className="text-[#c9a96e] uppercase tracking-[0.3em] text-sm font-medium"
         >
           Trusted by boutique hotels, lodges, retreats, and premium lifestyle brands worldwide
         </motion.p>
