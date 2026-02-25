@@ -71,7 +71,7 @@ const fallbackProjects = [
 
 export default function PortfolioSection() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   const { data: dbProjects } = useQuery({
     queryKey: ["portfolio-projects"],
