@@ -10,10 +10,21 @@ export default function TrustBar() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="text-3xl md:text-5xl font-light text-[#c9a96e] tracking-tight"
+          className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
         >
-          Trusted by boutique hotels, lodges, retreats, and premium lifestyle brands worldwide
+          Trusted By
         </motion.p>
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight"
+        >
+          Boutique hotels, lodges, retreats,
+          <br />
+          <span className="italic text-[#c9a96e]">and premium lifestyle brands worldwide.</span>
+        </motion.h2>
 
         <motion.div
           initial={{ opacity: 0 }}
