@@ -126,7 +126,7 @@ export default function ProjectDetail() {
       <Navbar />
 
       {/* Hero Image */}
-      <div className="w-full aspect-video max-h-[70vh] overflow-hidden">
+      <div className="w-full aspect-video max-h-[70vh] overflow-hidden cursor-pointer" onClick={() => openLightbox(0)}>
         <motion.img
           key={project.id}
           initial={{ opacity: 0, scale: 1.04 }}
@@ -134,7 +134,7 @@ export default function ProjectDetail() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           src={project.cover_image}
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hover:opacity-90 transition-opacity duration-300"
         />
       </div>
 
