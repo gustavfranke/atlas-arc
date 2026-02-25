@@ -37,16 +37,13 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center"
-          >
+          <Link to={createPageUrl("Home")} className="flex items-center">
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/ba4be0df8_Logov3.png"
               alt="Arc"
               className="h-8 md:h-10 w-auto"
             />
-          </button>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10">
