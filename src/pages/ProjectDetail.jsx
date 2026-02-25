@@ -288,6 +288,66 @@ export default function ProjectDetail() {
       </div>
 
       <Footer />
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            {/* Close */}
+            <button
+              onClick={closeLightbox}
+              className="absolute top-5 right-5 text-[#6b6156] hover:text-[#f5f0e8] transition-colors z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Prev */}
+            {allImages.length > 1 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); lightboxPrev(); }}
+                className="absolute left-4 md:left-8 text-[#6b6156] hover:text-[#c9a96e] transition-colors z-10 p-2"
+              >
+                <ArrowLeft className="w-6 h-6" />
+              </button>
+            )}
+
+            {/* Image */}
+            <motion.img
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.97 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              src={allImages[lightboxIndex]}
+              alt=""
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Next */}
+            {allImages.length > 1 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); lightboxNext(); }}
+                className="absolute right-4 md:right-8 text-[#6b6156] hover:text-[#c9a96e] transition-colors z-10 p-2"
+              >
+                <ArrowRight className="w-6 h-6" />
+              </button>
+            )}
+
+            {/* Counter */}
+            <p className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[#6b6156] text-xs uppercase tracking-[0.2em]">
+              {lightboxIndex + 1} / {allImages.length}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
