@@ -47,8 +47,8 @@ const team = [
       "Having amassed over 100K followers across his social media platforms he is uniquely qualified and experienced with social media marketing and its complexities.",
     ],
     socials: [
-      { icon: Instagram, label: "Instagram", href: "#" },
-      { icon: Youtube, label: "YouTube", href: "#" },
+      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/cameronsheferboswell" },
+      { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@MotionXP" },
     ],
   },
 ];
