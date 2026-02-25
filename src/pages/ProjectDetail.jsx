@@ -242,12 +242,17 @@ export default function ProjectDetail() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16"
         >
-          <Link
-            to={createPageUrl("Home") + "#contact"}
+          <button
+            onClick={() => {
+              navigate(createPageUrl("Home"));
+              setTimeout(() => {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }, 400);
+            }}
             className="block w-full py-4 bg-[#c9a96e] text-[#0a0a0a] text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#d4b87d] transition-all duration-500 text-center"
           >
             Work With Us
-          </Link>
+          </button>
         </motion.div>
 
         {/* Prev / Next Navigation */}
