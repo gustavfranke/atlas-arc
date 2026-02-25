@@ -105,14 +105,8 @@ export default function Team() {
             >
               {/* Image */}
               <div className="w-full md:w-2/5 flex-shrink-0">
-                <div className="aspect-[3/4] bg-[#111] overflow-hidden">
-                  {member.image ? (
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <div className="w-full h-full flex items-end p-6 bg-gradient-to-t from-[#0a0a0a] via-[#111]/60 to-[#1a1a1a]">
-                      <span className="text-[#2a2520] text-sm font-light uppercase tracking-widest">Photo coming soon</span>
-                    </div>
-                  )}
+                <div className="aspect-[4/5] bg-[#111] overflow-hidden">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
                 </div>
               </div>
 
