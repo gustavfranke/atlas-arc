@@ -15,7 +15,7 @@ export default function FeaturedCampaign() {
           transition={{ duration: 0.8 }}
           className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6 text-center"
         >
-          Featured Campaign
+          Our Work
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export default function FeaturedCampaign() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight text-center mb-16"
         >
-          Featured Campaign Film
+          A Collection of Stories We've Told
         </motion.h2>
 
         {/* Video Embed Area */}
