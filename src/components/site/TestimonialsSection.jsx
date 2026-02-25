@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
           The Results Speak Louder Than Any Pitch
         </motion.h2>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1816]">
+        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1816] items-stretch">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
               <p className="text-[#d4ccc0] font-light leading-relaxed text-sm md:text-base flex-1 italic">
                 "{t.quote}"
               </p>
-              <div className="mt-6">
+              <div className="mt-6 pt-6 border-t border-[#1a1816]">
                 <p className="text-[#a09888] text-xs uppercase tracking-[0.15em]">— {t.author}</p>
                 {t.company && (
                   <p className="text-[#6b6156] text-xs uppercase tracking-[0.15em] mt-1">{t.company}</p>
