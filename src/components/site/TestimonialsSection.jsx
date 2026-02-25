@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
           The Results Speak Louder Than Any Pitch
         </motion.h2>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1816]">
+        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1816] items-end">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-[#0d0c0a] p-8 md:p-10 flex flex-col"
+              className="bg-[#0d0c0a] p-8 md:p-10 flex flex-col h-full"
             >
               <Quote className="w-5 h-5 text-[#c9a96e]/30 mb-6" />
               <p className="text-[#d4ccc0] font-light leading-relaxed text-sm md:text-base flex-1 italic">
