@@ -90,6 +90,29 @@ export default function ProjectDetail() {
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
+  // All images for this project (cover + gallery)
+  const allImages = [
+    ...(project ? [project.cover_image].filter(Boolean) : []),
+    ...(project?.media_urls ?? []),
+  ];
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const openLightbox = (index) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const lightboxPrev = () => setLightboxIndex((i) => (i > 0 ? i - 1 : allImages.length - 1));
+  const lightboxNext = () => setLightboxIndex((i) => (i < allImages.length - 1 ? i + 1 : 0));
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (lightboxIndex === null) return;
+      if (e.key === "ArrowLeft") lightboxPrev();
+      if (e.key === "ArrowRight") lightboxNext();
+      if (e.key === "Escape") closeLightbox();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [lightboxIndex]);
+
   if (!project) {
     return (
       <div className="bg-[#0a0a0a] min-h-screen flex items-center justify-center">
