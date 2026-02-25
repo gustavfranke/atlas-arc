@@ -160,7 +160,7 @@ export default function PortfolioSection() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="group cursor-pointer relative overflow-hidden aspect-[4/5]"
-                onClick={() => setSelectedProject(project)}
+                onClick={() => navigate(createPageUrl("ProjectDetail") + `?id=${project.id}`)}
               >
                 <img
                   src={project.cover_image || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"}
