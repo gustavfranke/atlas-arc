@@ -58,13 +58,13 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="bg-[#0d0c0a] p-8 md:p-10 flex flex-col justify-between"
+              className="bg-[#0d0c0a] p-8 md:p-10 flex flex-col"
             >
               <Quote className="w-5 h-5 text-[#c9a96e]/30 mb-6" />
               <p className="text-[#d4ccc0] font-light leading-relaxed text-sm md:text-base flex-1 italic">
                 "{t.quote}"
               </p>
-              <div className="mt-6 pt-6 border-t border-[#1a1816]">
+              <div className="mt-6">
                 <p className="text-[#a09888] text-xs uppercase tracking-[0.15em]">— {t.author}</p>
                 {t.company && (
                   <p className="text-[#6b6156] text-xs uppercase tracking-[0.15em] mt-1">{t.company}</p>
