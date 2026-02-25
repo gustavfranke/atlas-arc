@@ -31,7 +31,7 @@ export default function TrustBar() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-12 md:gap-16"
+          className="mt-20 flex flex-wrap items-center justify-center gap-12 md:gap-16"
         >
           {[
             { name: "Relais & Châteaux", url: "https://www.relaischateaux.com" },
