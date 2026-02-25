@@ -33,15 +33,19 @@ export default function FeaturedCampaign() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative aspect-video bg-[#111] overflow-hidden"
+          className="relative aspect-video bg-[#111] overflow-hidden group cursor-pointer"
+          onClick={() => window.open("https://www.youtube.com/watch?v=lJvdwTAyCr8", "_blank")}
         >
-          <iframe
-            src="https://www.youtube.com/embed/lJvdwTAyCr8?rel=0&modestbranding=1"
-            className="w-full h-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            frameBorder="0"
+          <img
+            src="https://img.youtube.com/vi/lJvdwTAyCr8/maxresdefault.jpg"
+            alt="Our Work"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 border border-white/30 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Play className="w-6 h-6 md:w-8 md:h-8 text-white fill-white ml-1" />
+            </div>
+          </div>
         </motion.div>
 
         <motion.p
