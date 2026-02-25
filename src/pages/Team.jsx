@@ -23,7 +23,7 @@ const team = [
       "With a portfolio spanning the Kruger, Seychelles, Botswana, and Namibia, he crafts immersive films that evoke emotion and inspire travel. His technical precision and narrative instinct make him an ideal creative for brands looking to showcase not just place — but feeling, depth, and identity.",
     ],
     socials: [
-      { icon: Instagram, label: "Instagram", href: "#" },
+      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gustavfrankecinematography" },
     ],
   },
   {
