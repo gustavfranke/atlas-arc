@@ -86,9 +86,9 @@ export default function ContactSection() {
               transition={{ ...fadeUp.transition, delay: 0.3 }}
               className="mt-12 space-y-4"
             >
-              <a href="mailto:hello@arc.com" className="flex items-center gap-3 text-[#a09888] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light">
+              <a href="mailto:Gustav@atlasandarc.com" className="flex items-center gap-3 text-[#a09888] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light">
                 <Mail className="w-4 h-4" />
-                hello@arc.com
+                Gustav@atlasandarc.com
               </a>
               <a href="https://instagram.com/arc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#a09888] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light">
                 <Instagram className="w-4 h-4" />
