@@ -56,7 +56,7 @@ export default function TrustBar() {
               href={brand.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#3a3530] text-sm md:text-base uppercase tracking-[0.25em] font-light hover:text-[#c9a96e] transition-colors duration-300"
+              className="text-[#a09888] text-sm md:text-base uppercase tracking-[0.25em] font-light hover:text-[#c9a96e] transition-colors duration-300"
             >
               {brand.name}
             </a>
