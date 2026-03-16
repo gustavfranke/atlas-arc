@@ -48,12 +48,14 @@ export default function CTABanner() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button
-            onClick={() => scrollTo("contact")}
+          <a
+            href="https://wa.me/27728168004"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-4 bg-[#c9a96e] text-[#0a0a0a] text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#d4b87d] transition-all duration-500"
           >
-            Book a Call
-          </button>
+            WhatsApp
+          </a>
           <button
             onClick={() => scrollTo("contact")}
             className="px-8 py-4 border border-[#f5f0e8]/20 text-[#f5f0e8] text-sm uppercase tracking-[0.2em] font-light hover:border-[#c9a96e] hover:text-[#c9a96e] transition-all duration-500"
