@@ -55,7 +55,7 @@ export default function AboutSection() {
           <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
             Arc exists for brands that want more than generic visuals. We work with hospitality, travel, and lifestyle companies who understand that their brand is not a product.
           </motion.p>
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} className="text-[#f5f0e8] font-light">
+          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} className="text-[#a09888] font-light">
             It is an experience.
           </motion.p>
           <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.45 }}>
