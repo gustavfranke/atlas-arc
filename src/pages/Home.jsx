@@ -18,6 +18,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <TrustBar />
+      <TestimonialsSection />
       <AboutSection />
       <ServicesSection />
       <WhyUsSection />
