@@ -6,41 +6,41 @@ const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-50px" },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
 };
 
 const services = [
-  {
-    icon: Film,
-    title: "Cinematic Brand Films",
-    desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling.",
-  },
-  {
-    icon: Camera,
-    title: "Photography & Editorial Shoots",
-    desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print.",
-  },
-  {
-    icon: Layers,
-    title: "Social Media Content Packages & Management",
-    desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic.",
-  },
-  {
-    icon: Compass,
-    title: "Creative Direction & Story Development",
-    desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera.",
-  },
-  {
-    icon: Play,
-    title: "Reels & Short-Form Video",
-    desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads.",
-  },
-  {
-    icon: Zap,
-    title: "Launch-Ready Ad Creatives",
-    desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork.",
-  },
-];
+{
+  icon: Film,
+  title: "Cinematic Brand Films",
+  desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling."
+},
+{
+  icon: Camera,
+  title: "Photography & Editorial Shoots",
+  desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print."
+},
+{
+  icon: Layers,
+  title: "Social Media Content Packages & Management",
+  desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic."
+},
+{
+  icon: Compass,
+  title: "Creative Direction & Story Development",
+  desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera."
+},
+{
+  icon: Play,
+  title: "Reels & Short-Form Video",
+  desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads."
+},
+{
+  icon: Zap,
+  title: "Launch-Ready Ad Creatives",
+  desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork."
+}];
+
 
 export default function ServicesSection() {
   return (
@@ -48,15 +48,15 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto px-6">
         <motion.p
           {...fadeUp}
-          className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
-        >
+          className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6">
+          
           Services
         </motion.p>
         <motion.h2
           {...fadeUp}
           transition={{ ...fadeUp.transition, delay: 0.1 }}
-          className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight"
-        >
+          className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight">
+          
           What We Create
         </motion.h2>
 
@@ -70,17 +70,17 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-[#0d0c0a] p-8 md:p-10 group hover:bg-[#111010] transition-colors duration-700"
-              >
+                className="bg-[#0d0c0a] p-8 md:p-10 group hover:bg-[#111010] transition-colors duration-700">
+                
                 <Icon className="w-6 h-6 text-[#c9a96e] mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
                 <h3 className="text-[#f5f0e8] text-lg font-light mb-4 tracking-tight">{s.title}</h3>
                 <p className="text-[#7a7068] text-sm font-light leading-relaxed">{s.desc}</p>
-              </motion.div>
-            );
+              </motion.div>);
+
           })}
-          <div className="bg-[#0d0c0a] p-8 md:p-10" />
+          
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
