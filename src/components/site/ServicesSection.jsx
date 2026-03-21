@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Film, Camera, Layers, Compass, Play } from "lucide-react";
+import { Film, Camera, Layers, Compass, Play, Zap } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
