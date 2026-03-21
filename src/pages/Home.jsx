@@ -24,7 +24,6 @@ export default function Home() {
       <WhyUsSection />
       <FeaturedCampaign />
       <PortfolioSection />
-      <TestimonialsSection />
       <CTABanner />
       <ContactSection />
       <Footer />
