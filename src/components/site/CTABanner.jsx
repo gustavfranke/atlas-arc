@@ -49,7 +49,7 @@ export default function CTABanner() {
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="https://wa.me/27728168004"
+            href="https://wa.me/message/JYOURIZOJN64M1"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-[#c9a96e] text-[#0a0a0a] text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#d4b87d] transition-all duration-500"
