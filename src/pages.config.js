@@ -57,7 +57,6 @@ export const PAGES = {
     "Admin": Admin,
     "Home": Home,
     "ProjectDetail": ProjectDetail,
-    "Team": Team,
 }
 
 export const pagesConfig = {
