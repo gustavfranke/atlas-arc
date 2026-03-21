@@ -32,7 +32,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          scrolled ? "bg-[#0a0a0a]/60 backdrop-blur-md border-b border-[#1a1a1a]/50" : "bg-transparent"
+          scrolled ? "bg-[#0a0a0a]/60 backdrop-blur-md" : "bg-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
