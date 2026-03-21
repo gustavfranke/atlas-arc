@@ -2,6 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Instagram, Youtube } from "lucide-react";
 
+const team = [
+  {
+    name: "Gustav Franke",
+    role: "Lead Cinematographer",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/845bf4100_Gustav.png",
+    paragraphs: [
+      "Gustav is a seasoned filmmaker whose cinematic vision has brought to life the stories of some of Africa's most exclusive destinations.",
+      "With a portfolio spanning the Kruger, Seychelles, Botswana, and Namibia, he crafts immersive films that evoke emotion and inspire travel. His technical precision and narrative instinct make him an ideal creative for brands looking to showcase not just place — but feeling, depth, and identity.",
+    ],
+    socials: [
+      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gustavfrankecinematography" },
+    ],
+  },
+  {
+    name: "Simon Watson",
+    role: "Lead Photographer & Director",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/beba5e974_Simon.png",
+    paragraphs: [
+      "At the core of Simon's work is a deep sensitivity to the people he photographs. He focuses on building a comfortable environment where subjects feel at ease — because it's in those unguarded moments that something genuine and emotionally resonant can emerge.",
+      "As trust builds, so does creative momentum, allowing Simon to capture honest, human imagery that connects far beyond the frame.",
+    ],
+    socials: [
+      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/simon_watson_photo" },
+    ],
+  },
+  {
+    name: "Cameron Shefer-Boswell",
+    role: "Social Media Manager",
+    image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/61eb6cd80_Cameron.png",
+    paragraphs: [
+      "Cameron maintains a balance of creativity and technical ability in everything he does. He is highly detail-oriented and holds his work to exceptionally high standards.",
+      "Having amassed over 100K followers across his social media platforms he is uniquely qualified and experienced with social media marketing and its complexities.",
+    ],
+    socials: [
+      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/cameronsheferboswell" },
+      { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@MotionXP" },
+    ],
+  },
+];
+
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
