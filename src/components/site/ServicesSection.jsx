@@ -35,6 +35,11 @@ const services = [
     title: "Reels & Short-Form Video",
     desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads.",
   },
+  {
+    icon: Zap,
+    title: "Launch-Ready Ad Creatives",
+    desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork.",
+  },
 ];
 
 export default function ServicesSection() {
