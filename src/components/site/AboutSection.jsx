@@ -151,21 +151,80 @@ export default function AboutSection() {
           transition={{ ...fadeUp.transition, delay: 0.55 }}
           className="mt-12"
         >
-          <div className="flex flex-wrap gap-8 items-center">
-            <button
-              onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
-              className="text-[#c9a96e] text-sm uppercase tracking-[0.2em] font-light border-b border-[#c9a96e]/30 pb-1 hover:border-[#c9a96e] transition-all duration-500"
-            >
-              Explore Our Work
-            </button>
-            <Link
-              to={createPageUrl("Team")}
-              className="text-[#a09888] text-sm uppercase tracking-[0.2em] font-light border-b border-[#a09888]/30 pb-1 hover:text-[#c9a96e] hover:border-[#c9a96e] transition-all duration-500"
-            >
-              Meet the Team
-            </Link>
-          </div>
+          <button
+            onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
+            className="text-[#c9a96e] text-sm uppercase tracking-[0.2em] font-light border-b border-[#c9a96e]/30 pb-1 hover:border-[#c9a96e] transition-all duration-500"
+          >
+            Explore Our Work
+          </button>
         </motion.div>
+
+        {/* Divider */}
+        <motion.div
+          {...fadeUp}
+          className="mt-24 mb-24 h-px bg-gradient-to-r from-transparent via-[#2a2520] to-transparent"
+        />
+
+        {/* Team */}
+        <motion.p {...fadeUp} className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6">
+          The People Behind the Work
+        </motion.p>
+        <motion.h3
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.1 }}
+          className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight leading-[1.1] mb-6"
+        >
+          Meet the Team
+        </motion.h3>
+        <motion.p
+          {...fadeUp}
+          transition={{ ...fadeUp.transition, delay: 0.2 }}
+          className="text-[#a09888] text-base md:text-lg font-light leading-relaxed max-w-2xl mb-20"
+        >
+          Arc is built on the talent of individuals who bring obsessive craft, genuine curiosity, and creative integrity to every project.
+        </motion.p>
+
+        <div className="space-y-24">
+          {team.map((member, i) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-12 md:gap-16 items-start`}
+            >
+              <div className="w-full md:w-2/5 flex-shrink-0">
+                <div className="aspect-[4/5] bg-[#111] overflow-hidden">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                </div>
+              </div>
+              <div className="flex-1 pt-0 md:pt-4">
+                <p className="text-[#c9a96e] uppercase tracking-[0.3em] text-xs font-light mb-4">{member.role}</p>
+                <h4 className="text-3xl md:text-4xl font-light text-[#f5f0e8] tracking-tight mb-8">{member.name}</h4>
+                <div className="space-y-5">
+                  {member.paragraphs.map((p, j) => (
+                    <p key={j} className="text-[#a09888] text-base md:text-lg font-light leading-relaxed">{p}</p>
+                  ))}
+                </div>
+                <div className="flex gap-5 mt-10">
+                  {member.socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[#6b6156] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light uppercase tracking-[0.2em]"
+                    >
+                      <s.icon className="w-4 h-4" />
+                      {s.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
