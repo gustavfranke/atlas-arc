@@ -50,7 +50,6 @@
 import Admin from './pages/Admin';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
-import Team from './pages/Team';
 import __Layout from './Layout.jsx';
 
 
