@@ -17,8 +17,16 @@ const bullets = [
 
 export default function WhyUsSection() {
   return (
-    <section className="bg-[#0a0a0a] py-24 md:py-40">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="relative bg-[#0a0a0a] py-24 md:py-40 overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/658c57279_Proposalv2.png')" }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#0a0a0a]/85" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
         <motion.p
           {...fadeUp}
           className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
@@ -79,5 +87,6 @@ export default function WhyUsSection() {
         </motion.p>
       </div>
     </section>
+
   );
 }
