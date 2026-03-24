@@ -33,7 +33,7 @@ const team = [
     image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/61eb6cd80_Cameron.png",
     paragraphs: [
       "Cameron maintains a balance of creativity and technical ability in everything he does. He is highly detail-oriented and holds his work to exceptionally high standards.",
-      "Having amassed over 100K followers across his social media platforms he is uniquely qualified and experienced with social media marketing and its complexities. He has a background in Motion Design with experience in ideation, storyboarding, illustration, design and animation.",
+      "Having amassed over 100K followers across his social media platforms he is uniquely qualified and experienced with social media marketing and its complexities.",
     ],
     socials: [
       { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/cameronsheferboswell" },
