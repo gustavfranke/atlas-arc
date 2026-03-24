@@ -60,7 +60,7 @@ export default function AboutSection() {
 
 
   return (
-    <section id="about" className="bg-[#0a0a0a]">
+    <section id="about" className="bg-[#0a0a0a] pb-24 md:pb-40">
 
       {/* Hero-style intro block with background image */}
       <div className="relative flex items-center justify-center overflow-hidden">
