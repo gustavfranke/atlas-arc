@@ -71,7 +71,7 @@ export default function AboutSection() {
         
         {/* Dark overlays — heavier to improve text legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/20 to-[#0a0a0a]" />
-        <div className="absolute inset-0 bg-[#0a0a0a]/50" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/70" />
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-40 w-full">
