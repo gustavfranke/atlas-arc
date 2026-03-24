@@ -63,18 +63,18 @@ export default function AboutSection() {
     <section id="about" className="bg-[#0a0a0a]">
 
       {/* Hero-style intro block with background image */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/63115498f_AtlasArc-RhinoAfrica-5724.jpg')" }}
         />
-        {/* Dark overlays like the hero */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/40 to-[#0a0a0a]/80" />
-        <div className="absolute inset-0 bg-[#0a0a0a]/30" />
+        {/* Dark overlays — heavier to improve text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/20 to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/50" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-32 md:py-48 w-full">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-40 w-full">
           {/* Section Label */}
           <motion.p
             {...fadeUp}
