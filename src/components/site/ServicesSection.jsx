@@ -13,32 +13,38 @@ const services = [
 {
   icon: Film,
   title: "Cinematic Brand Films",
-  desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling."
+  desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling.",
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/a8cf00ca4_1.jpg"
 },
 {
   icon: Camera,
   title: "Photography & Editorial Shoots",
-  desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print."
+  desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print.",
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/8a5f85ddb_2.jpg"
 },
 {
   icon: Layers,
   title: "Social Media Content Packages & Management",
-  desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic."
+  desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic.",
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/4bd624351_3.jpg"
 },
 {
   icon: Compass,
   title: "Creative Direction & Story Development",
-  desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera."
+  desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera.",
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/ccc20e2b0_4.JPG"
 },
 {
   icon: Play,
   title: "Reels & Short-Form Video",
-  desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads."
+  desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads.",
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/f3413a5e2_5.jpg"
 },
 {
   icon: Zap,
   title: "Launch-Ready Ad Creatives",
-  desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork."
+  desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork.",
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/49d13cd29_6.JPG"
 }];
 
 
@@ -70,11 +76,22 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-[#0d0c0a] p-8 md:p-10 group hover:bg-[#111010] transition-colors duration-700">
+                className="relative overflow-hidden p-8 md:p-10 group">
                 
-                <Icon className="w-6 h-6 text-[#c9a96e] mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
-                <h3 className="text-[#f5f0e8] text-lg font-light mb-4 tracking-tight">{s.title}</h3>
-                <p className="text-[#7a7068] text-sm font-light leading-relaxed">{s.desc}</p>
+                {/* Background image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('${s.image}')` }}
+                />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-[#0a0a0a]/75 group-hover:bg-[#0a0a0a]/65 transition-colors duration-700" />
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <Icon className="w-6 h-6 text-[#c9a96e] mb-6 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
+                  <h3 className="text-[#f5f0e8] text-lg font-light mb-4 tracking-tight">{s.title}</h3>
+                  <p className="text-[#b0a898] text-sm font-light leading-relaxed">{s.desc}</p>
+                </div>
               </motion.div>);
 
           })}
