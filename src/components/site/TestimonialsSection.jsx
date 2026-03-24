@@ -100,11 +100,11 @@ export default function TestimonialsSection() {
       </motion.h2>
 
       {/* Carousel */}
-      <div className="mt-16 md:mt-24 relative">
+      <div className="mt-16 md:mt-24 max-w-6xl mx-auto px-6 relative">
         {/* Left Arrow */}
         <button
           onClick={() => slide(-1)}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center border border-[#2a2520] bg-[#0a0a0a]/80 text-[#a09888] hover:text-[#c9a96e] hover:border-[#c9a96e]/40 transition-all duration-300"
+          className="absolute left-6 md:left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center border border-[#2a2520] bg-[#0a0a0a]/80 text-[#a09888] hover:text-[#c9a96e] hover:border-[#c9a96e]/40 transition-all duration-300"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -145,14 +145,14 @@ export default function TestimonialsSection() {
         {/* Right Arrow */}
         <button
           onClick={() => slide(1)}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center border border-[#2a2520] bg-[#0a0a0a]/80 text-[#a09888] hover:text-[#c9a96e] hover:border-[#c9a96e]/40 transition-all duration-300"
+          className="absolute right-6 md:right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center border border-[#2a2520] bg-[#0a0a0a]/80 text-[#a09888] hover:text-[#c9a96e] hover:border-[#c9a96e]/40 transition-all duration-300"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
 
         {/* Edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0d0c0a] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0d0c0a] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-6 w-24 bg-gradient-to-r from-[#0d0c0a] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-6 w-24 bg-gradient-to-l from-[#0d0c0a] to-transparent" />
       </div>
     </section>
   );
