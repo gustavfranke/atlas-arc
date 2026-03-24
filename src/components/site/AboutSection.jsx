@@ -70,7 +70,7 @@ export default function AboutSection() {
           style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/63115498f_AtlasArc-RhinoAfrica-5724.jpg')" }} />
         
         {/* Dark overlays — heavier to improve text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/20 to-[#0a0a0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/20 to-[#0a0a0a]" />
         <div className="absolute inset-0 bg-[#0a0a0a]/50" />
 
         {/* Content */}
