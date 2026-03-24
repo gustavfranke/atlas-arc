@@ -66,7 +66,7 @@ export default function ServicesSection() {
           What We Create
         </motion.h2>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1a1816]">
+        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-[#1a1816]">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
