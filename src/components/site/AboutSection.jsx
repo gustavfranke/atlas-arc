@@ -60,49 +60,65 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="bg-[#0a0a0a] py-24 md:py-40">
-      <div className="max-w-4xl mx-auto px-6">
-        {/* Section Label */}
-        <motion.p
-          {...fadeUp}
-          className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
-        >
-          About
-        </motion.p>
+    <section id="about" className="bg-[#0a0a0a]">
 
-        {/* Headline */}
-        <motion.h2
-          {...fadeUp}
-          transition={{ ...fadeUp.transition, delay: 0.1 }}
-          className="text-3xl md:text-5xl font-light text-[#f5f0e8] leading-[1.15] tracking-tight"
-        >
-          We're Not Here to "Create Content."
-          <br />
-          <span className="italic text-[#c9a96e]">We're Here to Capture a Feeling.</span>
-        </motion.h2>
+      {/* Hero-style intro block with background image */}
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/63115498f_AtlasArc-RhinoAfrica-5724.jpg')" }}
+        />
+        {/* Dark overlays like the hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/40 to-[#0a0a0a]/80" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/30" />
 
-        {/* Body */}
-        <div className="mt-16 space-y-6 text-[#a09888] text-base md:text-lg font-light leading-relaxed">
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-            Anyone can shoot a pretty video. Anyone can slap a preset on a photo.
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 py-32 md:py-48 w-full">
+          {/* Section Label */}
+          <motion.p
+            {...fadeUp}
+            className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
+          >
+            About
           </motion.p>
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
-            But very few teams can capture the one thing that actually sells.
-          </motion.p>
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} className="text-[#f5f0e8] text-xl md:text-2xl font-light italic">
-            Emotion. Atmosphere. Story.
-          </motion.p>
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
-            Arc exists for brands that want more than generic visuals. We work with hospitality, travel, and lifestyle companies who understand that their brand is not a product.
-          </motion.p>
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} className="text-[#f5f0e8] font-light">
-            It is an experience.
-          </motion.p>
-          <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.45 }}>
-            And your audience needs to feel it before they buy.
-          </motion.p>
+
+          {/* Headline */}
+          <motion.h2
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            className="text-3xl md:text-5xl font-light text-[#f5f0e8] leading-[1.15] tracking-tight"
+          >
+            We're Not Here to "Create Content."
+            <br />
+            <span className="italic text-[#c9a96e]">We're Here to Capture a Feeling.</span>
+          </motion.h2>
+
+          {/* Body */}
+          <div className="mt-16 space-y-6 text-[#a09888] text-base md:text-lg font-light leading-relaxed">
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
+              Anyone can shoot a pretty video. Anyone can slap a preset on a photo.
+            </motion.p>
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
+              But very few teams can capture the one thing that actually sells.
+            </motion.p>
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} className="text-[#f5f0e8] text-xl md:text-2xl font-light italic">
+              Emotion. Atmosphere. Story.
+            </motion.p>
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
+              Arc exists for brands that want more than generic visuals. We work with hospitality, travel, and lifestyle companies who understand that their brand is not a product.
+            </motion.p>
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} className="text-[#f5f0e8] font-light">
+              It is an experience.
+            </motion.p>
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.45 }}>
+              And your audience needs to feel it before they buy.
+            </motion.p>
+          </div>
         </div>
+      </div>
 
+      <div className="max-w-4xl mx-auto px-6">
         {/* Divider */}
         <motion.div
           {...fadeUp}
