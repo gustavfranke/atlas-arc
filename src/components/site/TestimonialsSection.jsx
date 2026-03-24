@@ -40,6 +40,7 @@ export default function TestimonialsSection() {
   const rafRef = useRef(null);
   const pausedRef = useRef(false);
   const [offset, setOffset] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
 
   const totalWidth = testimonials.length * STEP;
 
@@ -66,12 +67,14 @@ export default function TestimonialsSection() {
 
   const slide = (dir) => {
     pausedRef.current = true;
+    setIsSliding(true);
     offsetRef.current += dir * STEP;
     // Keep within the middle copy range
     if (offsetRef.current >= totalWidth * 2) offsetRef.current -= totalWidth;
     if (offsetRef.current < totalWidth) offsetRef.current += totalWidth;
     setOffset(offsetRef.current);
-    // Resume auto-scroll after a pause
+    // Remove transition after animation completes, then resume auto-scroll
+    setTimeout(() => { setIsSliding(false); }, 550);
     setTimeout(() => { pausedRef.current = false; }, 2000);
   };
 
@@ -115,6 +118,7 @@ export default function TestimonialsSection() {
               gap: `${CARD_GAP}px`,
               transform: `translateX(-${offset}px)`,
               willChange: "transform",
+              transition: isSliding ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)" : "none",
             }}
           >
             {items.map((t, i) => (
