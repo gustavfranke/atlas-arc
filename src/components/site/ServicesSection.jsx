@@ -20,7 +20,7 @@ const services = [
   icon: Camera,
   title: "Photography & Editorial Shoots",
   desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/8a5f85ddb_2.jpg"
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/650a8d346_AtlasArc-RhinoAfrica-9448.jpg"
 },
 {
   icon: Layers,
