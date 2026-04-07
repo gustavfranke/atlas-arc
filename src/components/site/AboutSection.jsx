@@ -106,7 +106,7 @@ export default function AboutSection() {
               Emotion. Atmosphere. Story.
             </motion.p>
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
-              Arc exists for brands that want more than generic visuals. We work with hospitality, travel, and lifestyle companies who understand that their brand is not a product.
+              Arc exists for brands that want more than generic visuals. We work with travel brands and purpose-led businesses who understand that their brand is not a product.
             </motion.p>
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} className="text-[#f5f0e8] font-light">
               It is an experience.
@@ -160,7 +160,7 @@ export default function AboutSection() {
           transition={{ ...fadeUp.transition, delay: 0.5 }}
           className="mt-16 text-[#a09888] text-base md:text-lg font-light leading-relaxed">
           
-          Whether you are launching a luxury lodge, a boutique hotel, a retreat, or a premium service brand — we help you build visuals that make your audience stop scrolling and start imagining themselves inside your world.
+          Whether you are a travel brand, a purpose-led business, or a premium service brand — we help you build visuals that make your audience stop scrolling and start imagining themselves inside your world.
         </motion.p>
 
         <motion.div

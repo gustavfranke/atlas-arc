@@ -52,7 +52,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 text-[#a09888] text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Arc is a boutique creative studio specializing in high-end photography, film, social media management, and branded storytelling for hotels, retreats, travel brands, and purpose-led businesses.
+          Arc is a boutique creative studio specializing in high-end photography, film, social media management, and branded storytelling for travel brands and purpose-led businesses.
         </motion.p>
 
         <motion.p
