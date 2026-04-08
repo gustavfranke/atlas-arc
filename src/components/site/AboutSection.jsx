@@ -60,6 +60,8 @@ export default function AboutSection() {
           style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/63115498f_AtlasArc-RhinoAfrica-5724.jpg')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/10 to-[#0a0a0a]/60" />
         <div className="absolute inset-0 bg-[#0a0a0a]/35" />
+        {/* Blend fade from above */}
+        <div className="absolute top-0 left-0 right-0 h-[30px] bg-gradient-to-b from-[#0a0a0a] to-transparent z-10" />
         {/* Blend fade into next image section */}
         <div className="absolute bottom-0 left-0 right-0 h-[30px] bg-gradient-to-t from-[#0a0a0a] to-transparent z-10" />
 
