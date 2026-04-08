@@ -32,7 +32,7 @@ const services = [
   icon: Compass,
   title: "Creative Direction & Story Development",
   desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/ccc20e2b0_4.JPG"
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/e6a1b81bf_Simon_watson_inpaint.png"
 },
 {
   icon: Play,
