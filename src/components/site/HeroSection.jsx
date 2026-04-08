@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0a] z-10" />
         <img
-          src="https://media.base44.com/images/public/698dc9d481b400b640a22adf/b040f8bbf_Perivoli-flux-simonwatsonimages-7062.jpg"
+          src="https://media.base44.com/images/public/698dc9d481b400b640a22adf/0f49faf1f_IMG_31492.jpg"
           alt="Cinematic wildlife landscape"
           className="w-full h-full object-cover opacity-40"
         />
