@@ -35,6 +35,16 @@ const fallbackProjects = [
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1N8A6357.jpg",
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/56c0e7778_Perivoli-flux-simonwatsonimages-3786.jpg",
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-2295.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/8d547424e_Perivoli-flux-simonwatsonimages--7copy.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/5dfb47f7a_Perivoli-flux-simonwatsonimages--14.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/0c19ff5c1_Perivoli-flux-simonwatsonimages--22.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/0def639a9_Perivoli-flux-simonwatsonimages-3786.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/bcf06cb07_Perivoli-flux-simonwatsonimages-6321.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/4f46dce91_Perivoli-flux-simonwatsonimages-5432.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/9c0701c01_Perivoli-flux-simonwatsonimages-7062.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/c6d262122_Perivoli-flux-simonwatsonimages-7567.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/311d95a6d_Perivoli-flux-simonwatsonimages--23.jpg",
+      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/064b0138c_Perivoli-flux-simonwatsonimages-4011.jpg",
     ]
   },
   {
