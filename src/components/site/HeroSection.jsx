@@ -11,7 +11,7 @@ export default function HeroSection() {
     <section id="hero" className="relative h-screen w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center">
       {/* Background Image / Gradient Overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0a] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-[#0a0a0a] z-10" />
         <img
           src="https://media.base44.com/images/public/698dc9d481b400b640a22adf/0f49faf1f_IMG_31492.jpg"
           alt="Cinematic wildlife landscape"
