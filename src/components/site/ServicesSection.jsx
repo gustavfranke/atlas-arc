@@ -14,7 +14,7 @@ const services = [
   icon: Film,
   title: "Cinematic Brand Films",
   desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/4bd624351_3.jpg"
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/dcc51e437_RobinClarkNoordehoekbeachshoot_4.jpg"
 },
 {
   icon: Camera,
