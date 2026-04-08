@@ -224,20 +224,7 @@ export default function AboutSection() {
                 <p key={j} className="text-[#a09888] text-base md:text-lg font-light leading-relaxed">{p}</p>
                 )}
                 </div>
-                <div className="flex gap-5 mt-10">
-                  {member.socials.map((s) =>
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#6b6156] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light uppercase tracking-[0.2em]">
-                  
-                      <s.icon className="w-4 h-4" />
-                      {s.label}
-                    </a>
-                )}
-                </div>
+
               </div>
             </motion.div>
           )}
