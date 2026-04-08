@@ -24,7 +24,7 @@ export default function WhyUsSection() {
         style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/de89ba459_Perivoli-flux-simonwatsonimages-3786.jpg')" }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#0a0a0a]/85" />
+      <div className="absolute inset-0 bg-[#0a0a0a]/60" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <motion.p
