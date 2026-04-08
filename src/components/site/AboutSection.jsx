@@ -60,6 +60,8 @@ export default function AboutSection() {
           style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/63115498f_AtlasArc-RhinoAfrica-5724.jpg')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/10 to-[#0a0a0a]/60" />
         <div className="absolute inset-0 bg-[#0a0a0a]/35" />
+        {/* Blend fade into next image section */}
+        <div className="absolute bottom-0 left-0 right-0 h-[30px] bg-gradient-to-t from-[#0a0a0a] to-transparent z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-40 w-full">
           <motion.p
@@ -106,6 +108,8 @@ export default function AboutSection() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/6d0510395__L1B3642.jpg')" }} />
         <div className="absolute inset-0 bg-[#0a0a0a]/45" />
+        {/* Blend fade from first image section */}
+        <div className="absolute top-0 left-0 right-0 h-[30px] bg-gradient-to-b from-[#0a0a0a] to-transparent z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-32">
           <motion.h3
