@@ -58,8 +58,8 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/63115498f_AtlasArc-RhinoAfrica-5724.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/20 to-[#0a0a0a]" />
-        <div className="absolute inset-0 bg-[#0a0a0a]/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/10 to-[#0a0a0a]/60" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/35" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-40 w-full">
           <motion.p
