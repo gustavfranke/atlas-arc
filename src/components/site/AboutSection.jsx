@@ -112,6 +112,8 @@ export default function AboutSection() {
         <div className="absolute inset-0 bg-[#0a0a0a]/45" />
         {/* Blend fade from first image section */}
         <div className="absolute top-0 left-0 right-0 h-[30px] bg-gradient-to-b from-[#0a0a0a] to-transparent z-10" />
+        {/* Blend fade into next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#0a0a0a] to-transparent z-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 md:py-32">
           <motion.h3
