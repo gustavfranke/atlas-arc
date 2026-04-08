@@ -44,7 +44,7 @@ const services = [
   icon: Zap,
   title: "Launch-Ready Ad Creatives",
   desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/49d13cd29_6.JPG"
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/68e5ca54a_simonwatsonimages_stock_2021-152.jpg"
 }];
 
 
