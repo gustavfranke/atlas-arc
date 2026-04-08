@@ -28,7 +28,7 @@ const fallbackProjects = [
   {
     id: "3", title: "Coastal Retreat Architecture", category: "Hotels & Lodges", location: "Seychelles & Greece",
     description: "A premium visual series showcasing stunning resort architecture, infinity pools, and luxury coastal living across multiple properties.",
-    deliverables: ["Brand Film (60 sec)", "12 Social Reels", "80 Edited Photos", "Drone Footage"],
+    deliverables: ["Brand Film (60 sec)", "12 Social Reels", "350 Edited Photos", "Drone Footage"],
     cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1ae031230_canopy-hilton-seychelles-simonwatsonimages-2435.jpg",
     media_urls: [
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1N8A6357.jpg",
