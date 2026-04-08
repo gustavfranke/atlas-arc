@@ -21,7 +21,7 @@ export default function WhyUsSection() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/658c57279_Proposalv2.png')" }}
+        style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/de89ba459_Perivoli-flux-simonwatsonimages-3786.jpg')" }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#0a0a0a]/85" />
