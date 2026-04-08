@@ -27,7 +27,7 @@ const fallbackProjects = [
   },
   {
     id: "3", title: "Coastal Retreat Architecture", category: "Hotels & Lodges", location: "Seychelles & Greece",
-    description: "A premium visual series showcasing stunning resort architecture, infinity pools, and luxury coastal living across multiple properties.",
+    description: "A premium visual campaign for a top tier luxury safari lodge in the Sabi Sand. Incidental moments framed by the beauty of the setting.",
     deliverables: ["Brand Film (60 sec)", "12 Social Reels", "350 Edited Photos", "Drone Footage"],
     cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1ae031230_canopy-hilton-seychelles-simonwatsonimages-2435.jpg",
     media_urls: [
