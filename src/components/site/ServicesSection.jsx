@@ -26,7 +26,7 @@ const services = [
   icon: Layers,
   title: "Social Media Content Packages & Management",
   desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/a8cf00ca4_1.jpg"
+  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/52317aecb_Screenshot2026-04-08at133416.png"
 },
 {
   icon: Compass,
