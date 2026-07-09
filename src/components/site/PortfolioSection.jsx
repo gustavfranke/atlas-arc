@@ -135,12 +135,30 @@ export default function PortfolioSection() {
           Here's a selection of our latest work across travel, hospitality, lifestyle, and purpose-led brands.
         </motion.p>
 
+        {/* Watch More Films Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-12"
+        >
+          <a
+            href="https://gallery.gustavfranke.com/atlasandarc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-[#c9a96e] text-[#0a0a0a] text-sm uppercase tracking-[0.2em] font-medium hover:bg-[#d4b87d] transition-all duration-500"
+          >
+            Watch More Films
+          </a>
+        </motion.div>
+
         {/* Filter Tabs */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 flex flex-wrap gap-2"
         >
           {categories.map((cat) => (
