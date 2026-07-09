@@ -47,7 +47,7 @@ export default function TrustBar() {
             { name: "Star for Life", url: "https://www.starforlife.org" },
             { name: "Flux Full Circle", url: "https://www.fluxfullcircle.com" },
             { name: "Triumph Travel", url: "https://www.triumphtravel.co.za" },
-            { name: "Canopy by Hilton", url: "https://www.hilton.com/en/canopy" },
+            { name: "Canopy Hilton Seychelles", url: "https://www.hilton.com/en/hotels/sezmapy-canopy-seychelles-resort/" },
             { name: "21 Nettleton Hotel", url: "https://www.21nettleton.com" },
             { name: "YOCO", url: "https://www.yoco.com" },
           ].map((brand, i) => (

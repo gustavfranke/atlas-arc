@@ -1,0 +1,28 @@
+{
+  "name": "SiteContent",
+  "type": "object",
+  "properties": {
+    "section_key": {
+      "type": "string",
+      "description": "Unique key for the section (e.g. hero, about, services, etc.)"
+    },
+    "content": {
+      "type": "object",
+      "description": "JSON object with all editable content for this section",
+      "additionalProperties": true
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order of the section"
+    },
+    "is_visible": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this section is visible on the site"
+    }
+  },
+  "required": [
+    "section_key",
+    "content"
+  ]
+}

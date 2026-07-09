@@ -1,0 +1,63 @@
+{
+  "name": "PortfolioProject",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Hotels & Lodges",
+        "Retreats & Wellness",
+        "Lifestyle Brands",
+        "Short Form Reels",
+        "Photography"
+      ],
+      "description": "Portfolio category"
+    },
+    "location": {
+      "type": "string",
+      "description": "Project location"
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description"
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of deliverables"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Cover image URL"
+    },
+    "media_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Gallery images or video URLs"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "Embedded video URL (YouTube/Vimeo)"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ]
+}

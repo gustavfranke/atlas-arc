@@ -1,0 +1,26 @@
+{
+  "name": "Testimonial",
+  "type": "object",
+  "properties": {
+    "quote": {
+      "type": "string",
+      "description": "Testimonial quote text"
+    },
+    "author": {
+      "type": "string",
+      "description": "Author name/title"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company or brand name"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "quote",
+    "author"
+  ]
+}

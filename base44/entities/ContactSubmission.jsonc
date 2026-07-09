@@ -1,0 +1,61 @@
+{
+  "name": "ContactSubmission",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "brand_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "service_needed": {
+      "type": "string",
+      "enum": [
+        "Brand Film",
+        "Photography",
+        "Social Content Package",
+        "Full Campaign"
+      ]
+    },
+    "shoot_date": {
+      "type": "string"
+    },
+    "budget_range": {
+      "type": "string",
+      "enum": [
+        "Under $5,000",
+        "$5,000 - $10,000",
+        "$10,000 - $25,000",
+        "$25,000 - $50,000",
+        "$50,000+"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "in_progress",
+        "completed"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "name",
+    "email"
+  ]
+}

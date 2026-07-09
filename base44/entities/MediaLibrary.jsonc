@@ -1,0 +1,33 @@
+{
+  "name": "MediaLibrary",
+  "type": "object",
+  "properties": {
+    "file_url": {
+      "type": "string",
+      "description": "Uploaded file URL"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "Original file name"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video_url"
+      ],
+      "description": "Type of media"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Optional tags for organisation"
+    }
+  },
+  "required": [
+    "file_url",
+    "file_type"
+  ]
+}
