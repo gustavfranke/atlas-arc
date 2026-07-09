@@ -6,16 +6,19 @@ import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const fallbackTestimonials = [
   {
-    quote: "Atlas & Arc didn't just shoot content. They captured the entire soul of our lodge. Our bookings increased immediately after launch.",
-    author: "Lodge Owner, Western Cape",
+    quote: "Simon and I look back to a long collaboration, across our joined time at Rhino Africa and as a freelancer at Yoco. Simon was an integral part of our content strategy, in production as well as direction. Yoco's unique merchant centric photography is Simon's doing, portraying our customers' success as part of our companies purpose. His undefeated access to every human makes them look as good as it makes them look natural and authentic.",
+    author: "Robin W. Wolters",
+    company: "Chief Growth Officer, We Are Move",
   },
   {
-    quote: "The best creative team we've worked with. Everything felt effortless, professional, and the final output was world class.",
-    author: "Retreat Founder",
+    quote: "I use Gustav as my go-to videographer and photographer. His work is of an extremely high quality and he is a pleasure to work with. On a recent shoot for Relais & Chateaux, he went out of his way to meet very quick deadlines on my behalf.",
+    author: "Mitch Terry",
+    company: "Co-Founder, Torch Consult",
   },
   {
-    quote: "We finally have visuals that match the premium experience we offer. Worth every cent.",
-    author: "Hotel Marketing Director",
+    quote: "Simon has been instrumental in establishing the visual identity of the Flux brand, and is well versed in storytelling via media for luxury travel brands.",
+    author: "Stuart Lewis",
+    company: "Founder and CEO, Flux Full Circle",
   },
 ];
 
