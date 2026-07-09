@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
                   "{t.quote}"
                 </p>
                 <div className="mt-6 pt-6 border-t border-[#1a1816]">
-                  <p className="text-[#a09888] text-xs uppercase tracking-[0.15em]">— {t.author}</p>
+                  <p className="text-[#a09888] text-xs uppercase tracking-[0.15em]">{t.author}</p>
                   {t.company && (
                     <p className="text-[#6b6156] text-xs uppercase tracking-[0.15em] mt-1">{t.company}</p>
                   )}

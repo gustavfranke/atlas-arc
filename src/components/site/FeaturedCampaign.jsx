@@ -51,7 +51,7 @@ export default function FeaturedCampaign() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-10 text-center text-[#a09888] text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto italic"
         >
-          A cinematic glimpse into the kind of stories we tell — where light, landscape, and human connection become the narrative.
+          A cinematic glimpse into the kind of stories we tell (where light, landscape, and human connection become the narrative).
         </motion.p>
       </div>
     </section>

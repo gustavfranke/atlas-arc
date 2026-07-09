@@ -49,7 +49,7 @@ export default function Admin() {
       {/* Top Bar */}
       <div className="bg-white border-b px-6 py-4 flex items-center justify-between">
         <div>
-          <h1 className="text-lg font-semibold text-gray-900">Atlas & Arc — Admin</h1>
+          <h1 className="text-lg font-semibold text-gray-900">Atlas & Arc, Admin</h1>
           <p className="text-xs text-gray-500">Manage your website content</p>
         </div>
         <div className="flex items-center gap-4">

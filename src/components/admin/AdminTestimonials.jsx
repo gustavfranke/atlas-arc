@@ -99,7 +99,7 @@ export default function AdminTestimonials() {
           <div key={t.id} style={{ display: "flex", alignItems: "flex-start", gap: "12px", padding: "16px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: "8px" }}>
             <div style={{ flex: 1 }}>
               <p style={{ fontSize: "14px", color: "#374151", fontStyle: "italic", margin: "0 0 4px 0" }}>"{t.quote}"</p>
-              <p style={{ fontSize: "12px", color: "#6b7280", margin: 0 }}>— {t.author}{t.company ? `, ${t.company}` : ""}</p>
+              <p style={{ fontSize: "12px", color: "#6b7280", margin: 0 }}>{t.author}{t.company ? `, ${t.company}` : ""}</p>
             </div>
             <div style={{ display: "flex", gap: "4px", flexShrink: 0 }}>
               <Button variant="ghost" size="sm" onClick={() => setEditing(t)}>Edit</Button>

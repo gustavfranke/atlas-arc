@@ -25,7 +25,7 @@ const services = [
 {
   icon: Layers,
   title: "Social Media Content Packages & Management",
-  desc: "High-volume, high-quality content paired with hands-on management — giving your brand a consistent, elevated presence without sacrificing aesthetic.",
+  desc: "High-volume, high-quality content paired with hands-on management, giving your brand a consistent, elevated presence without sacrificing aesthetic.",
   image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/52317aecb_Screenshot2026-04-08at133416.png"
 },
 {
@@ -43,7 +43,7 @@ const services = [
 {
   icon: Zap,
   title: "Launch-Ready Ad Creatives",
-  desc: "We design high-performing ad creatives you can plug directly into your campaigns—no extra setup, no guesswork.",
+  desc: "We design high-performing ad creatives you can plug directly into your campaigns. No extra setup, no guesswork.",
   image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/68e5ca54a_simonwatsonimages_stock_2021-152.jpg"
 }];
 

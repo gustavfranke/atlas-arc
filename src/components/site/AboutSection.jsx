@@ -9,7 +9,7 @@ const team = [
   image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/5445378e5_gustav-portrait.jpg",
   paragraphs: [
   "Gustav is a seasoned filmmaker whose cinematic vision has brought to life the stories of some of Africa's most exclusive destinations.",
-  "With a portfolio spanning the Kruger, Seychelles, Botswana, and Namibia, he crafts immersive films that evoke emotion and inspire travel. His technical precision and narrative instinct make him an ideal creative for brands looking to showcase not just place — but feeling, depth, and identity."],
+  "With a portfolio spanning the Kruger, Seychelles, Botswana, Namibia, Mozambique, and Saudi Arabia, he crafts immersive films that evoke emotion and inspire travel. His technical precision and narrative instinct make him an ideal creative for brands looking to showcase not just place, but feeling, depth, and identity."],
   socials: [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gustavfrankecinematography" }]
 },
@@ -151,7 +151,7 @@ export default function AboutSection() {
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: 0.5 }}
             className="mt-16 text-[#a09888] text-base md:text-lg font-light leading-relaxed">
-            Whether you are a travel brand, a purpose-led business, or a premium service brand — we help you build visuals that make your audience stop scrolling and start imagining themselves inside your world.
+            Whether you are a travel brand, a purpose-led business, or a premium service brand, we help you build visuals that make your audience stop scrolling and start imagining themselves inside your world.
           </motion.p>
 
           <motion.div

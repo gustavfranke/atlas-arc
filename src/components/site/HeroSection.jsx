@@ -34,7 +34,7 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs md:text-sm font-light mb-8">
-            Arc — Creative Studio
+            Arc, Creative Studio
           </p>
         </motion.div>
 
