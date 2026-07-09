@@ -16,7 +16,7 @@ const team = [
 {
   name: "Simon Watson",
   role: "Lead Photographer & Director",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/beba5e974_Simon.png",
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/61ec5f868_team-simoncopy.png",
   paragraphs: [
   "At the core of Simon's work is a deep sensitivity to the people he photographs. He focuses on building a comfortable environment where subjects feel at ease, because it's in those unguarded moments that something genuine and emotionally resonant can emerge.",
   "As trust builds, so does creative momentum, allowing Simon to capture honest, human imagery that connects far beyond the frame."],
