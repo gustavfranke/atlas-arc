@@ -81,7 +81,7 @@ export default function AboutSection() {
             <span className="italic text-[#c9a96e]">We're Here to Capture a Feeling.</span>
           </motion.h2>
 
-          <div className="mt-16 space-y-6 text-[#a09888] text-base md:text-lg font-light leading-relaxed">
+          <div className="mt-16 space-y-6 text-[#FFFFFF] text-base md:text-lg font-light leading-relaxed">
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
               Anyone can shoot a pretty video. Anyone can slap a preset on a photo.
             </motion.p>
