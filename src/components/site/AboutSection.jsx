@@ -88,6 +88,11 @@ export default function AboutSection() {
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
               But very few teams can capture the one thing that actually sells.
             </motion.p>
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.275 }}>
+              AI can now fake a lodge that doesn't exist. A review from someone who never visited. A 'cinematic' reel shot by no one.
+              <br />
+              We still show up. We still shoot it real.
+            </motion.p>
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} className="text-[#f5f0e8] text-xl md:text-2xl font-light italic">
               Emotion. Atmosphere. Story.
             </motion.p>

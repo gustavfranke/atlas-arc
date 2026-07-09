@@ -13,6 +13,7 @@ const bullets = [
   { word: "Emotional", rest: "without being cheesy" },
   { word: "Cinematic", rest: "without being overproduced" },
   { word: "Luxury", rest: "without being pretentious" },
+  { word: "Real", rest: "not generated" },
 ];
 
 export default function WhyUsSection() {
