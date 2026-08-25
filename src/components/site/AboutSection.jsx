@@ -1,39 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Instagram, Youtube } from "lucide-react";
 
-const team = [
-{
+const founder = {
   name: "Gustav Franke",
-  role: "Lead Cinematographer",
   image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/5445378e5_gustav-portrait.jpg",
-  paragraphs: [
-  "Gustav is a seasoned filmmaker whose cinematic vision has brought to life the stories of some of Africa's most exclusive destinations.",
-  "With a portfolio spanning the Kruger, Seychelles, Botswana, Namibia, Mozambique, and Saudi Arabia, he crafts immersive films that evoke emotion and inspire travel. His technical precision and narrative instinct make him an ideal creative for brands looking to showcase not just place, but feeling, depth, and identity."],
-  socials: [
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gustavfrankecinematography" }]
-},
-{
-  name: "Simon Watson",
-  role: "Lead Photographer & Director",
-  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/61ec5f868_team-simoncopy.png",
-  paragraphs: [
-  "At the core of Simon's work is a deep sensitivity to the people he photographs. He focuses on building a comfortable environment where subjects feel at ease, because it's in those unguarded moments that something genuine and emotionally resonant can emerge.",
-  "As trust builds, so does creative momentum, allowing Simon to capture honest, human imagery that connects far beyond the frame."],
-  socials: [
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/simon_watson_photo" }]
-},
-{
-  name: "Cameron Shefer-Boswell",
-  role: "Social Media Manager",
-  image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/61eb6cd80_Cameron.png",
-  paragraphs: [
-  "Cameron maintains a balance of creativity and technical ability in everything he does. He is highly detail-oriented and holds his work to exceptionally high standards. He has a background in Motion Design with experience in ideation, storyboarding, illustration, design and animation.",
-  "Having amassed over 100K followers across his social media platforms he is uniquely qualified and experienced with social media marketing and its complexities."],
-  socials: [
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/cameronsheferboswell" },
-  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@MotionXP" }]
-}];
+  bio: "Gustav Franke is a filmmaker whose cinematic vision has shaped the visual identity of some of Africa's most exceptional destinations. With a portfolio spanning Botswana, Namibia, Mozambique, the Seychelles, and South Africa, he founded Arc to bring quiet, considered storytelling to a hospitality industry too often filled with sameness.",
+  closing: "Arc works with a hand-picked network of specialist photographers, editors, and producers, matched to each project."
+};
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -167,53 +140,47 @@ export default function AboutSection() {
         </div>
       </div>
 
-      {/* Team */}
-      <div className="max-w-4xl mx-auto px-6">
-        <motion.div
-          {...fadeUp}
-          className="mt-24 mb-24 h-px bg-gradient-to-r from-transparent via-[#2a2520] to-transparent" />
+      {/* Founder */}
+      <div className="bg-[#0F0E0C]">
+        <div className="max-w-4xl mx-auto px-6 py-24 md:py-32">
+          <motion.p
+            {...fadeUp}
+            className="text-[#C9A961] uppercase tracking-[0.35em] text-xs font-light mb-6">
+            FOUNDER · LEAD CINEMATOGRAPHER
+          </motion.p>
+          <motion.h3
+            {...fadeUp}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            style={{ fontFamily: "Fraunces, serif" }}
+            className="text-3xl md:text-5xl font-light text-[#F5F1EA] tracking-tight leading-[1.1] mb-16 md:mb-20">
+            Meet the Founder
+          </motion.h3>
 
-        <motion.p {...fadeUp} className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6">
-          The People Behind the Work
-        </motion.p>
-        <motion.h3
-          {...fadeUp}
-          transition={{ ...fadeUp.transition, delay: 0.1 }}
-          className="text-3xl md:text-5xl font-light text-[#f5f0e8] tracking-tight leading-[1.1] mb-6">
-          Meet the Team
-        </motion.h3>
-        <motion.p
-          {...fadeUp}
-          transition={{ ...fadeUp.transition, delay: 0.2 }}
-          className="text-[#a09888] text-base md:text-lg font-light leading-relaxed max-w-2xl mb-20">
-          Arc is built on the talent of individuals who bring obsessive craft, genuine curiosity, and creative integrity to every project.
-        </motion.p>
-
-        <div className="space-y-24">
-          {team.map((member, i) =>
           <motion.div
-            key={member.name}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-12 md:gap-16 items-start`}>
+            className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
             <div className="w-full md:w-2/5 flex-shrink-0">
               <div className="aspect-[4/5] bg-[#111] overflow-hidden">
-                <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                <img src={founder.image} alt={founder.name} className="w-full h-full object-cover object-top" />
               </div>
             </div>
             <div className="flex-1 pt-0 md:pt-4">
-              <p className="text-[#c9a96e] uppercase tracking-[0.3em] text-xs font-light mb-4">{member.role}</p>
-              <h4 className="text-3xl md:text-4xl font-light text-[#f5f0e8] tracking-tight mb-8">{member.name}</h4>
-              <div className="space-y-5">
-                {member.paragraphs.map((p, j) =>
-                <p key={j} className="text-[#a09888] text-base md:text-lg font-light leading-relaxed">{p}</p>
-                )}
-              </div>
+              <h4
+                style={{ fontFamily: "Fraunces, serif" }}
+                className="text-3xl md:text-4xl font-light text-[#F5F1EA] tracking-tight mb-8">
+                {founder.name}
+              </h4>
+              <p className="text-[#D4CCC0] text-base md:text-lg font-light leading-relaxed">
+                {founder.bio}
+              </p>
+              <p className="mt-8 text-[#A09888] text-sm md:text-base font-light leading-relaxed">
+                {founder.closing}
+              </p>
             </div>
           </motion.div>
-          )}
         </div>
       </div>
     </section>
