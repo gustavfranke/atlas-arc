@@ -23,7 +23,7 @@ const fallbackProjects = [
     id: "2", title: "Wilderness Treehouse Campaign", category: "Hotels & Lodges", location: "South Africa",
     description: "An epic night sky campaign featuring a unique treehouse lodge under the Milky Way. Focus on adventure, stargazing, and wild luxury.",
     deliverables: ["Brand Film (2 min)", "10 Social Reels", "50 Astrophotography Shots"],
-    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/f299de815__L1B1383-1.jpg",
+    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/3c49e446f_Still2026-05-22172644_11101.jpg",
   },
   {
     id: "3", title: "Coastal Retreat Architecture", category: "Hotels & Lodges", location: "Seychelles & Greece",
