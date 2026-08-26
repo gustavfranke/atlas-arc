@@ -32,7 +32,7 @@ const services = [
   icon: Compass,
   title: "Creative Direction & Story Development",
   desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/e6a1b81bf_Simon_watson_inpaint.png"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e932b00c6_Still2026-08-26094637_1111.jpg"
 },
 {
   icon: Play,
@@ -44,7 +44,7 @@ const services = [
   icon: Zap,
   title: "Launch-Ready Ad Creatives",
   desc: "We design high-performing ad creatives you can plug directly into your campaigns. No extra setup, no guesswork.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/68e5ca54a_simonwatsonimages_stock_2021-152.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d4a03e52d_Still2026-05-22172539_1301.jpg"
 }];
 
 

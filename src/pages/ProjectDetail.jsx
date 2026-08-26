@@ -30,31 +30,30 @@ const fallbackProjects = [
     id: "3", title: "Coastal Retreat Architecture", category: "Hotels & Lodges", location: "Seychelles & Greece",
     description: "A premium visual campaign for a top tier luxury safari lodge in the Sabi Sand. Incidental moments framed by the beauty of the setting.",
     deliverables: ["Brand Film (60 sec)", "12 Social Reels", "350 Edited Photos", "Drone Footage"],
-    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1ae031230_canopy-hilton-seychelles-simonwatsonimages-2435.jpg",
+    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/3c97aaf9a_Muzimo_331.jpg",
     media_urls: [
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1N8A6357.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/56c0e7778_Perivoli-flux-simonwatsonimages-3786.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-2295.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/8d547424e_Perivoli-flux-simonwatsonimages--7copy.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/5dfb47f7a_Perivoli-flux-simonwatsonimages--14.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/0c19ff5c1_Perivoli-flux-simonwatsonimages--22.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/0def639a9_Perivoli-flux-simonwatsonimages-3786.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/bcf06cb07_Perivoli-flux-simonwatsonimages-6321.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/4f46dce91_Perivoli-flux-simonwatsonimages-5432.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/9c0701c01_Perivoli-flux-simonwatsonimages-7062.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/c6d262122_Perivoli-flux-simonwatsonimages-7567.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/311d95a6d_Perivoli-flux-simonwatsonimages--23.jpg",
-      "https://media.base44.com/images/public/698dc9d481b400b640a22adf/064b0138c_Perivoli-flux-simonwatsonimages-4011.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9bcd3ce0e_Still2026-02-13131247_221.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/6c93b607f_Still2026-05-22172531_1311.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/1a00d5471_Still2026-08-26094637_191.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/921d1a8f2_Still2025-10-08103221_12662.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e932b00c6_Still2026-08-26094637_1111.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d4a03e52d_Still2026-05-22172539_1301.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/50a673db7_Still2026-05-22172644_11101.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9bcd3ce0e_Still2026-02-13131247_221.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/6c93b607f_Still2026-05-22172531_1311.jpg",
     ]
   },
   {
     id: "4", title: "Adventure Lifestyle Series", category: "Lifestyle Brands", location: "Coastal Locations",
     description: "Dynamic lifestyle content featuring surfing, water sports, and beach culture. Authentic, energetic, and cinematic.",
     deliverables: ["20 Lifestyle Reels", "60 Editorial Photos", "Social Content Package"],
-    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/480d00ac8_DEMI-WAWA-simonwatsonimages-3667.jpg",
+    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/1a00d5471_Still2026-08-26094637_191.jpg",
     media_urls: [
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/65b598601_DEMI-WAWA-simonwatsonimages-3881.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/066c6be2e_onedigital-simonwatsonimages-copy.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d4a03e52d_Still2026-05-22172539_1301.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg",
     ]
   },
   {
@@ -64,17 +63,17 @@ const fallbackProjects = [
     cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/cebfb04b7__L1B4364.jpg",
     media_urls: [
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/4cfaa7e09__ONG1522.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-1101.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-8611.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/50a673db7_Still2026-05-22172644_11101.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9bcd3ce0e_Still2026-02-13131247_221.jpg",
     ]
   },
   {
     id: "6", title: "Family & Adventure Retreats", category: "Retreats & Wellness", location: "South Africa & Mozambique",
     description: "Heartfelt storytelling of family travel experiences, nature immersion, and the joy of discovery in premium retreat settings.",
     deliverables: ["Brand Film (3 min)", "15 Social Reels", "70 Photos"],
-    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/simonwatsonimages-1457.jpg",
+    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e932b00c6_Still2026-08-26094637_1111.jpg",
     media_urls: [
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/Perivoli-flux-simonwatsonimages-8186.jpg",
+      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/3c97aaf9a_Muzimo_331.jpg",
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/12a69c392_1N8A6357.jpg",
     ]
   },

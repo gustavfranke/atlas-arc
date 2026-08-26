@@ -22,7 +22,7 @@ export default function WhyUsSection() {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/de89ba459_Perivoli-flux-simonwatsonimages-3786.jpg')" }}
+        style={{ backgroundImage: "url('https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg')" }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#0a0a0a]/60" />

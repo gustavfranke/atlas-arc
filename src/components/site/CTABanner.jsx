@@ -11,7 +11,7 @@ export default function CTABanner() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/e6c38ca7d_simonwatsonimages-1457.jpg"
+          src="https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/1a00d5471_Still2026-08-26094637_191.jpg"
           alt=""
           className="w-full h-full object-cover opacity-10"
         />
