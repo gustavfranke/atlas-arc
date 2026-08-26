@@ -59,7 +59,7 @@ const fallbackProjects = [
     id: "5", title: "Wildlife Portrait Series", category: "Photography", location: "Africa",
     description: "Intimate wildlife portraits capturing leopards, elephants, lions, and gorillas in their natural habitat. Golden hour magic.",
     deliverables: ["100 Edited Wildlife Photos", "Print Gallery", "Conservation Story Film"],
-    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/cebfb04b7__L1B4364.jpg",
+    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/91a9aa346_Still2026-08-26101716_1371.jpg",
     media_urls: [
       "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/4cfaa7e09__ONG1522.jpg",
       "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/50a673db7_Still2026-05-22172644_11101.jpg",

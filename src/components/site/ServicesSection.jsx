@@ -14,13 +14,13 @@ const services = [
   icon: Film,
   title: "Cinematic Brand Films",
   desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling.",
-  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/41cf6320c_Still2025-10-08103221_12662.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/84d57aed8_Still2026-08-26101733_1321.jpg"
 },
 {
   icon: Camera,
   title: "Photography & Editorial Shoots",
   desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print.",
-  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/724e792a0_image.png"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/4d45fcc7a_Still2026-08-26101638_1301.jpg"
 },
 {
   icon: Layers,
