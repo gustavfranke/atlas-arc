@@ -13,7 +13,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-[#0a0a0a] z-10" />
         <img
-          src="https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/7f4564754_Still2026-05-22172539_1301.jpg"
+          src="https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e56ba404c_Still2026-08-26101146_2391.jpg"
           alt="Cinematic wildlife landscape"
           className="w-full h-full object-cover opacity-40"
         />

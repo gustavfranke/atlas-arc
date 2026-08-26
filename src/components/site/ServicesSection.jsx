@@ -14,37 +14,37 @@ const services = [
   icon: Film,
   title: "Cinematic Brand Films",
   desc: "Short and long-form films designed to communicate the essence of your brand. Not ads. Not fluff. Real cinematic storytelling.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/dcc51e437_RobinClarkNoordehoekbeachshoot_4.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/41cf6320c_Still2025-10-08103221_12662.jpg"
 },
 {
   icon: Camera,
   title: "Photography & Editorial Shoots",
   desc: "Premium photography that elevates your brand into luxury territory. Perfect for websites, booking platforms, social media, and print.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/650a8d346_AtlasArc-RhinoAfrica-9448.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/724e792a0_image.png"
 },
 {
   icon: Layers,
   title: "Social Media Content Packages & Management",
   desc: "High-volume, high-quality content paired with hands-on management, giving your brand a consistent, elevated presence without sacrificing aesthetic.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/52317aecb_Screenshot2026-04-08at133416.png"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9b89b687d_Still2026-08-26101219_2281.jpg"
 },
 {
   icon: Compass,
   title: "Creative Direction & Story Development",
   desc: "We help plan your shoot, script your narrative, build your shot list, and craft your brand story before we ever touch a camera.",
-  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e932b00c6_Still2026-08-26094637_1111.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/682b8360b_Muzimo_331.jpg"
 },
 {
   icon: Play,
   title: "Reels & Short-Form Video",
   desc: "Cinematic vertical content for Instagram, TikTok, YouTube Shorts, and paid ads.",
-  image: "https://media.base44.com/images/public/698dc9d481b400b640a22adf/f3413a5e2_5.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/a6a43091f_Still2026-02-13131247_221.jpg"
 },
 {
   icon: Zap,
   title: "Launch-Ready Ad Creatives",
   desc: "We design high-performing ad creatives you can plug directly into your campaigns. No extra setup, no guesswork.",
-  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d4a03e52d_Still2026-05-22172539_1301.jpg"
+  image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/096fa61cc_Still2026-05-22172644_11101.jpg"
 }];
 
 

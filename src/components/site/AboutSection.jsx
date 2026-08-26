@@ -30,7 +30,7 @@ export default function AboutSection() {
       <div className="relative flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/8f9ccbde8_womaninwaterlushlandscape.jpg')" }} />
+          style={{ backgroundImage: "url('https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/38c5b71a2_Still2026-05-22172539_1301.jpg')" }} />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-[#0a0a0a]/10 to-[#0a0a0a]/60" />
         <div className="absolute inset-0 bg-[#0a0a0a]/35" />
         {/* Blend fade from above */}
@@ -86,7 +86,7 @@ export default function AboutSection() {
       <div className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://media.base44.com/images/public/698dc9d481b400b640a22adf/6d0510395__L1B3642.jpg')" }} />
+          style={{ backgroundImage: "url('https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/a061ff256_Still2026-05-22172531_1311.jpg')" }} />
         <div className="absolute inset-0 bg-[#0a0a0a]/45" />
         {/* Blend fade from first image section */}
         <div className="absolute top-0 left-0 right-0 h-[30px] bg-gradient-to-b from-[#0a0a0a] to-transparent z-10" />
