@@ -86,7 +86,7 @@ export default function AboutSection() {
       <div className="relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/a061ff256_Still2026-05-22172531_1311.jpg')" }} />
+          style={{ backgroundImage: "url('https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/f0541fac1_coupleelephantmaindeck.jpg')" }} />
         <div className="absolute inset-0 bg-[#0a0a0a]/45" />
         {/* Blend fade from first image section */}
         <div className="absolute top-0 left-0 right-0 h-[30px] bg-gradient-to-b from-[#0a0a0a] to-transparent z-10" />
