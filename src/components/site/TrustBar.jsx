@@ -37,7 +37,7 @@ export default function TrustBar() {
             { name: "Relais & Châteaux", url: "https://www.relaischateaux.com" },
             { name: "Simbavati Lodge Collection", url: "https://www.simbavati.com" },
             { name: "One & Only", url: "https://www.oneandonlyresorts.com" },
-            { name: "La Residence", url: "https://www.laresidence.co.za" },
+            { name: "La Residence", url: "https://www.theroyalportfolio.com/la-residence/" },
             { name: "Wilderness Safaris", url: "https://www.wildernesssafaris.com" },
             { name: "RhinoAfrica", url: "https://www.rhinoafrica.com" },
             { name: "Triumph Travel", url: "https://www.triumphtravel.co.za" },
