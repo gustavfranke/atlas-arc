@@ -37,19 +37,11 @@ export default function TrustBar() {
             { name: "Relais & Châteaux", url: "https://www.relaischateaux.com" },
             { name: "Simbavati Lodge Collection", url: "https://www.simbavati.com" },
             { name: "One & Only", url: "https://www.oneandonlyresorts.com" },
-            { name: "Perivoli Lagoon House", url: "https://www.perivoli.com" },
-            { name: "The Residence Collection", url: "https://www.cenizaro.com/theresidence" },
+            { name: "La Residence", url: "https://www.laresidence.co.za" },
             { name: "Wilderness Safaris", url: "https://www.wildernesssafaris.com" },
-            { name: "Explore Sideways", url: "https://www.exploresideways.com" },
             { name: "RhinoAfrica", url: "https://www.rhinoafrica.com" },
-            { name: "Mastercard", url: "https://www.mastercard.com" },
-            { name: "SA Harvest", url: "https://www.saharvest.org" },
-            { name: "Star for Life", url: "https://www.starforlife.org" },
-            { name: "Flux Full Circle", url: "https://www.fluxfullcircle.com" },
             { name: "Triumph Travel", url: "https://www.triumphtravel.co.za" },
             { name: "Canopy Hilton Seychelles", url: "https://www.hilton.com/en/hotels/sezmapy-canopy-seychelles-resort/" },
-            { name: "21 Nettleton Hotel", url: "https://www.21nettleton.com" },
-            { name: "YOCO", url: "https://www.yoco.com" },
           ].map((brand, i) => (
             <a
               key={i}
