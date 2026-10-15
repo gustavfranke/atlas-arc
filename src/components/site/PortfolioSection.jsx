@@ -1,107 +1,102 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { base44 } from "@/api/base44Client";
-import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
-import { createPageUrl } from "@/utils";
+import { X, Play } from "lucide-react";
 
-const DEFAULT_CATEGORIES = ["Hotels & Lodges", "Retreats & Wellness", "Lifestyle Brands", "Short Form Reels", "Photography"];
-
-const fallbackProjects = [
+const films = [
   {
-    id: "1", title: "Gorongosa Safari Experience", category: "Hotels & Lodges", location: "Gorongosa National Park, Mozambique",
-    description: "A cinematic campaign capturing the raw beauty of safari life, golden hour game drives, and intimate guest experiences at luxury tented camps.",
-    deliverables: ["Brand Film (90 sec)", "8 Social Reels", "60 Edited Photos", "Aerial Footage"],
-    cover_image: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/98cda59d7_GorongosaNationalPark037.jpg",
-    media_urls: [
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/79b1104d0_Chicari_038.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/71f23fc2d_GorongosaNationalPark001.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/c5211f542_GorongosaNationalPark025.jpg",
-    ]
+    id: "silvan",
+    title: "Silvan",
+    location: "Sabi Sands, Kruger Park",
+    still: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/091d3a3d8_womanelephantsdeck.jpg",
+    embed: "https://galleries.vidflow.co/videos/voex2tx8",
   },
   {
-    id: "2", title: "Wilderness Treehouse Campaign", category: "Hotels & Lodges", location: "South Africa",
-    description: "An epic night sky campaign featuring a unique treehouse lodge under the Milky Way. Focus on adventure, stargazing, and wild luxury.",
-    deliverables: ["Brand Film (2 min)", "10 Social Reels", "50 Astrophotography Shots"],
-    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/3c49e446f_Still2026-05-22172644_11101.jpg",
+    id: "chicari",
+    title: "Chicari",
+    location: "Gorongosa, Mozambique",
+    still: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/07b062576_DJI_20250925140028_0325_D.jpg",
+    embed: "https://galleries.vidflow.co/videos/2f042328",
   },
   {
-    id: "3", title: "Coastal Retreat Architecture", category: "Hotels & Lodges", location: "Seychelles & Greece",
-    description: "A premium visual campaign for a top tier luxury safari lodge in the Sabi Sand. Incidental moments framed by the beauty of the setting.",
-    deliverables: ["Brand Film (60 sec)", "12 Social Reels", "350 Edited Photos", "Drone Footage"],
-    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/3c97aaf9a_Muzimo_331.jpg",
-    media_urls: [
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/1N8A6357.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9bcd3ce0e_Still2026-02-13131247_221.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/6c93b607f_Still2026-05-22172531_1311.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/1a00d5471_Still2026-08-26094637_191.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/921d1a8f2_Still2025-10-08103221_12662.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e932b00c6_Still2026-08-26094637_1111.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d4a03e52d_Still2026-05-22172539_1301.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/50a673db7_Still2026-05-22172644_11101.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9bcd3ce0e_Still2026-02-13131247_221.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/6c93b607f_Still2026-05-22172531_1311.jpg",
-    ]
+    id: "simbavati",
+    title: "Simbavati Hero Film",
+    location: "Lodge Group",
+    still: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d405d0e5d_SimbavatiHeroFilmCover.png",
+    embed: "https://www.youtube.com/embed/XL7jw3gx2rw?autoplay=1&rel=0",
   },
   {
-    id: "4", title: "Adventure Lifestyle Series", category: "Lifestyle Brands", location: "Coastal Locations",
-    description: "Dynamic lifestyle content featuring surfing, water sports, and beach culture. Authentic, energetic, and cinematic.",
-    deliverables: ["20 Lifestyle Reels", "60 Editorial Photos", "Social Content Package"],
-    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/1a00d5471_Still2026-08-26094637_191.jpg",
-    media_urls: [
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/d4a03e52d_Still2026-05-22172539_1301.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e6fecf3ec_Still2026-08-26094637_111.jpg",
-    ]
+    id: "la-residence",
+    title: "La Residence",
+    location: "Franschhoek, South Africa",
+    still: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/7bee51f98_LaResidenceCover.png",
+    embed: "https://galleries.vidflow.co/videos/48407f01",
   },
   {
-    id: "5", title: "Wildlife Portrait Series", category: "Photography", location: "Africa",
-    description: "Intimate wildlife portraits capturing leopards, elephants, lions, and gorillas in their natural habitat. Golden hour magic.",
-    deliverables: ["100 Edited Wildlife Photos", "Print Gallery", "Conservation Story Film"],
-    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/91a9aa346_Still2026-08-26101716_1371.jpg",
-    media_urls: [
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/4cfaa7e09__ONG1522.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/50a673db7_Still2026-05-22172644_11101.jpg",
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/9bcd3ce0e_Still2026-02-13131247_221.jpg",
-    ]
+    id: "vea",
+    title: "VEA Legacy Aviation",
+    location: "Cape Town, South Africa",
+    still: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/62fc05e18_Screenshot2026-10-15at154656.png",
+    embed: "https://galleries.vidflow.co/videos/mr6zvxax",
   },
   {
-    id: "6", title: "Family & Adventure Retreats", category: "Retreats & Wellness", location: "South Africa & Mozambique",
-    description: "Heartfelt storytelling of family travel experiences, nature immersion, and the joy of discovery in premium retreat settings.",
-    deliverables: ["Brand Film (3 min)", "15 Social Reels", "70 Photos"],
-    cover_image: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/e932b00c6_Still2026-08-26094637_1111.jpg",
-    media_urls: [
-      "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/3c97aaf9a_Muzimo_331.jpg",
-      "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698dc9d481b400b640a22adf/12a69c392_1N8A6357.jpg",
-    ]
+    id: "elgin",
+    title: "Elgin River Lodge",
+    location: "Elgin Valley, South Africa",
+    still: "https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/f44ec6d1f_ElginRiverLodge.jpg",
+    embed: "https://galleries.vidflow.co/videos/wi3xo6x0",
   },
 ];
 
+function FilmModal({ film, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-10"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/95" />
+      <button
+        onClick={onClose}
+        aria-label="Close film"
+        className="absolute top-5 right-5 z-20 p-2 text-[#a09888] hover:text-[#f5f0e8] transition-colors"
+      >
+        <X className="w-6 h-6" />
+      </button>
+      <div className="relative z-10 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+        <div className="aspect-video w-full bg-black">
+          <iframe
+            src={film.embed}
+            title={film.title}
+            className="w-full h-full"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+        <div className="mt-5">
+          <h3 className="text-[#f5f0e8] text-xl font-light">{film.title}</h3>
+          <p className="text-[#8a7e72] text-sm font-light mt-1">{film.location}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const navigate = useNavigate();
-
-  const { data: dbProjects } = useQuery({
-    queryKey: ["portfolio-projects"],
-    queryFn: () => base44.entities.PortfolioProject.list("order", 50),
-    initialData: [],
-  });
-
-  const { data: catRecord } = useQuery({
-    queryKey: ["portfolio-categories"],
-    queryFn: async () => {
-      const records = await base44.entities.SiteContent.filter({ section_key: "portfolio_categories" });
-      return records.length > 0 ? records[0] : null;
-    },
-  });
-  const categories = ["All", ...(catRecord?.content?.categories ?? DEFAULT_CATEGORIES)];
-
-  const projects = dbProjects.length > 0 ? dbProjects : fallbackProjects;
-
-  const filtered = activeCategory === "All"
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
+  const [activeFilm, setActiveFilm] = useState(null);
 
   return (
     <section id="portfolio" className="bg-[#0a0a0a] py-24 md:py-40">
@@ -113,7 +108,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8 }}
           className="text-[#c9a96e] uppercase tracking-[0.35em] text-xs font-light mb-6"
         >
-          Portfolio
+          Selected Work
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -152,60 +147,43 @@ export default function PortfolioSection() {
           </a>
         </motion.div>
 
-        {/* Filter Tabs */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 flex flex-wrap gap-2"
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 text-xs uppercase tracking-[0.15em] font-light transition-all duration-300 ${
-                activeCategory === cat
-                  ? "text-[#0a0a0a] bg-[#c9a96e]"
-                  : "text-[#6b6156] border border-[#2a2520] hover:border-[#c9a96e] hover:text-[#c9a96e]"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Portfolio Grid */}
+        {/* Film Grid */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <AnimatePresence mode="wait">
-            {filtered.map((project, i) => (
-              <motion.div
-                key={project.id || i}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="group cursor-pointer relative overflow-hidden aspect-[4/5]"
-                onClick={() => navigate(createPageUrl("ProjectDetail") + `?id=${project.id}`)}
-              >
-                <img
-                  src={project.cover_image || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-[#c9a96e] text-xs uppercase tracking-[0.2em] mb-1">{project.category}</p>
-                  <h3 className="text-[#f5f0e8] text-lg font-light">{project.title}</h3>
-                  <p className="text-[#8a7e72] text-sm font-light mt-1">{project.location}</p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {films.map((film, i) => (
+            <motion.button
+              key={film.id}
+              type="button"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              onClick={() => setActiveFilm(film)}
+              className="group cursor-pointer relative overflow-hidden aspect-[16/10] text-left"
+              aria-label={`Play ${film.title}`}
+            >
+              <img
+                src={film.still}
+                alt={film.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <span className="w-14 h-14 rounded-full border border-[#f5f0e8]/70 flex items-center justify-center">
+                  <Play className="w-5 h-5 text-[#f5f0e8] ml-0.5" fill="currentColor" />
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <h3 className="text-[#f5f0e8] text-lg font-light">{film.title}</h3>
+                <p className="text-[#c9a96e] text-xs uppercase tracking-[0.2em] mt-1">{film.location}</p>
+              </div>
+            </motion.button>
+          ))}
         </div>
       </div>
 
+      <AnimatePresence>
+        {activeFilm && <FilmModal film={activeFilm} onClose={() => setActiveFilm(null)} />}
+      </AnimatePresence>
     </section>
   );
 }
