@@ -11,7 +11,7 @@ export default function HeroSection() {
     <section id="hero" className="relative h-screen w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center">
       {/* Background Image / Gradient Overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-[#0a0a0a] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-[#0a0a0a] z-10" />
         <video
           src="https://media.base44.com/videos/public/6a0ca2931598507c35cbc6c6/1934955c2_ArcWebsiteHero.mp4"
           poster="https://media.base44.com/images/public/6a0ca2931598507c35cbc6c6/1f78d5e86_Still2026-08-26094637_332.jpg"
@@ -21,7 +21,7 @@ export default function HeroSection() {
           playsInline
           preload="auto"
           aria-label="Cinematic wildlife landscape"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-[0.6]"
         />
       </div>
 
