@@ -90,9 +90,9 @@ export default function ContactSection() {
                 <Mail className="w-4 h-4" />
                 Gustav@atlasandarc.com
               </a>
-              <a href="https://instagram.com/arc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#a09888] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light">
+              <a href="https://www.instagram.com/gustavfranke_travel/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-[#a09888] hover:text-[#c9a96e] transition-colors duration-300 text-sm font-light">
                 <Instagram className="w-4 h-4" />
-                @arc
+                @gustavfranke_travel
               </a>
             </motion.div>
           </div>
