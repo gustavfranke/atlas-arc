@@ -49,34 +49,29 @@ export default function AboutSection() {
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: 0.1 }}
             className="text-3xl md:text-5xl font-light text-[#f5f0e8] leading-[1.15] tracking-tight">
-            We're Not Here to "Create Content."
+            We Bring Your Lodge to Life
             <br />
-            <span className="italic text-[#c9a96e]">We're Here to Capture a Feeling.</span>
+            <span className="italic text-[#c9a96e]">Before Guests Arrive.</span>
           </motion.h2>
 
           <div className="mt-16 space-y-6 text-[#FFFFFF] text-base md:text-lg font-light leading-relaxed">
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.2 }}>
-              Anyone can shoot a pretty video. Anyone can slap a preset on a photo.
+              Every lodge and hotel has a feeling. The first sundowner on the deck, the quiet of the bush before sunrise, the moment you walk into your room and stop talking. It's what guests remember and what they tell people about.
             </motion.p>
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.25 }}>
-              But very few teams can capture the one thing that actually sells.
+              We film and photograph your property to capture that feeling as a guest lives it. Our films and imagery put people inside the stay, so they can see themselves there before they've booked.
             </motion.p>
-            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.275 }}>
-              AI can now fake a lodge that doesn't exist. A review from someone who never visited. A 'cinematic' reel shot by no one.
-              <br />
-              We still show up. We still shoot it real.
-            </motion.p>
-            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }} className="text-[#f5f0e8] text-xl md:text-2xl font-light italic">
-              Emotion. Atmosphere. Story.
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.3 }}>
+              We shoot with the long term in mind. One visit gives you a hero film, reels and stills, released over the months that follow. Your content keeps working long after the shoot is done.
             </motion.p>
             <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.35 }}>
-              Arc exists for brands that want more than generic visuals. We work with travel brands and purpose-led businesses who understand that their brand is not a product.
+              Every frame has one job: build awareness, drive engagement and lead to bookings.
             </motion.p>
-            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }} className="text-[#f5f0e8] font-light">
-              It is an experience.
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.4 }}>
+              We also run digital marketing for hotels and lodges, so the content we capture reaches the right people and gets the most out of every piece.
             </motion.p>
-            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.45 }}>
-              And your audience needs to feel it before they buy.
+            <motion.p {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.45 }} className="text-[#f5f0e8] text-xl md:text-2xl font-light italic">
+              Made to keep booking long after the shoot.
             </motion.p>
           </div>
         </div>
